@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>CVG Store - Mua bán xe máy</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <!-- Template Stylesheet -->
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/datatables.bootstrap5.min.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link href="~/image/cvg.jpg" rel="icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="~/plugins/fontawesome/css/all.min.css" />
+    <link rel="stylesheet"
+          href="~/plugins/fontawesome/css/fontawesome.min.css" />
+    <link href="~/css/mycustomtable.css" rel="stylesheet" />
+    <link href="~/css/virtualselect.css" rel="stylesheet" />
+    <link href="~/css/tooltip.css" rel="stylesheet" />
+    <!-- Customized Bootstrap Stylesheet -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/jquery.datatables.min.js"></script>
+    <script src="~/js/datatables.bootstrap5.min.js"></script>
+    <!--sweetalert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+
+</head>
+
+<body style="background-color:#f5f5f5b8">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Đang tải...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s" style="justify-content: space-between;
+    align-items: center; background-color: #b3ffc3b8">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img class="m-0 text-primary" src="~/image/CVGstore_logo.png" alt="" style="width:180px;height:160px;"   />
+        </a>
+        <button type="button" class="navbar-toggler me-4" onclick="toggleDiv()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            @RenderSection("Section1")
+        </div>
+        <script>
+            var isDivCollapsed = false; // Biến kiểm tra trạng thái của div
+
+            function toggleDiv() {
+                var div = document.getElementById("navbarCollapse");
+                if (isDivCollapsed) {
+                    div.style.display = "block"; // Mở div nếu đang đóng
+                    isDivCollapsed = false; // Cập nhật trạng thái
+                } else {
+                    div.style.display = "none"; // Đóng div nếu đang mở
+                    isDivCollapsed = true; // Cập nhật trạng thái
+                }
+            }
+        </script>
+    </nav>
+    <!-- Navbar End -->
+    @RenderSection("Section2")
+    
+    
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="fas fa-arrow-alt-circle-up"></i></a>
+    <div style="margin-bottom:30px"></div>
+
+
+
+    
+    <!-- Template Javascript -->
+    <script src="~/js/main.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    @* <script src="~/js/bootstrap.bundle.js"></script> *@
+    @* <script src="~/js/bootstrap.bundle.min.js"></script> *@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/mycustomdatatable.js"></script>
+    <script src="~/js/virtualselect.js"></script>
+    <script src="~/js/tooltip.js"></script>
+    
+    <script>
+        VirtualSelect.init({
+            ele: '#sample-select',
+            search: true,
+        });
+
+    </script>
+    
+    @* <script src="~/js/hiddenandshowdiv.js"></script> *@
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.8/jquery.inputmask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/locale/vi.js"></script>
+    
+</body>
+
+</html>

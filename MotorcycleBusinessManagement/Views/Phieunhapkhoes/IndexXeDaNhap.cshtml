@@ -1,0 +1,399 @@
+﻿@model IEnumerable<MotorcycleBusinessManagement.Models.Phieunhapkho>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+
+<style media="(max-width: 576px)">
+    .table-responsive td,
+    .table-responsive th {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .table-responsive tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive th {
+        flex-basis: 10%;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .table-responsive td {
+        flex-basis: 90%;
+        padding: 0.75rem 2rem;
+    }
+</style>
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item " style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <img src="~/image/xe.png" style="display: inline-block; width: 8%; height: 10%; float: left;" />
+    <img src="~/image/xe2.png" style="display: inline-block; width: 8%; height: 10%; float: right;transform: translateY(20%)" />
+    <div class="container-lg">
+        <div style="border: 3px solid #1a17d4; margin-top:30px; border-radius: 20px;">
+            <ul class="nav nav-pills">
+                <li class="nav-item" style="width:33%">
+                    <a class="nav-link" style="text-align:center;" href="@Url.Action("Index", "Phieunhapkhoes")"><i class="fa fa-list-alt"></i> Danh sách phiếu nhập xe mới</a>
+                </li>
+                @* <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li> *@
+                <li class="nav-item" style="width:34%">
+                    <a class="nav-link" style="text-align:center;" href="@Url.Action("IndexXeCu", "Phieunhapkhoes")"><i class="fa fa-list-alt"></i> Danh sách phiếu nhập xe cũ</a>
+                </li>
+                <li class="nav-item" style="width:33%">
+                    <a class="nav-link active" style="text-align:center; border-radius: 0px 20px 20px 0px" href="@Url.Action("IndexXeDaNhap", "Phieunhapkhoes")"><i class="fa fa-eye-slash"></i> Danh sách xe đã nhập</a>
+                </li>
+            </ul>
+        </div>
+        @if (@TempData["AlertSuccessMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: 'Mã @TempData["AlertSuccessMessage"] đã được tạo thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertEditMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Cập nhật thành công!',
+                    text: 'Mã @TempData["AlertEditMessage"] đã được cập nhật thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertDeleteMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Xóa thành công!',
+                    text: 'Mã @TempData["AlertSuccessMessage"] đã được xóa thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertDontDeleteMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'danger',
+                    title: 'Không thể xóa!',
+                    text: 'Mã @TempData["AlertDontDeleteMessage"] không thể xóa do đã bán',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertpnkMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không tìm thấy!',
+                    text: '@TempData["AlertpnkMessage"] không có dữ liệu',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertErrorMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không có dữ liệu!',
+                    text: '@TempData["AlertErrorMessage"] không thể thêm được!!!',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertxdnMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không tìm thấy!',
+                    text: '@TempData["AlertxdnMessage"] không có dữ liệu',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        
+        
+        <div class="tab-content" id="mytabcontent">
+
+            <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="home-tab">
+                <form method="post">
+                    <div style="display:flex;margin-top:30px">
+                        <div>
+                            <input style="height:40px; width:300px;border-radius: 20px 0px 0px 20px;" type="search" name="searchString" placeholder="Tìm kiếm...">
+                            <button type="submit" class="search-btn"><i class='fas fa-search'></i></button>
+                        </div>
+                        <style>
+                            .search-btn {
+                                color: #9ca3af;
+                                height: 40px;
+                                width: 40px;
+                                background: #9fc2fd;
+                                border-radius: 0px 20px 20px 0px;
+                            }
+                        </style>
+                        <div style="display:flex;margin-left:30px;">
+                            <div style="display: flex">
+                                <label class="col-form-label" style="min-width:60px;">Tên xe:</label>
+                                <select id="sample-select" size="5" name="selectxe"
+                                        placeholder="--Chọn tên xe--"
+                                        class="py-2">
+                                    @if (TempData["Xe"] is List<Xe> xe)
+                                    {
+                                        <option value="">Không chọn</option>
+                                        foreach (var product in xe)
+                                        {
+                                            <option value="@product.Idxe">
+                                                @product.Tenxe
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div style="display: flex; margin-left:30px">
+                                <label class="col-form-label" style="width:50px; ">Màu:</label>
+                                <select id="sample-select" size="5" name="selectmauxe"
+                                        placeholder="--Chọn màu xe--"
+                                        class="py-2">
+                                    @if (TempData["MauXe"] is List<Mauxe> mauxe)
+                                    {
+                                        <option value="">Không chọn</option>
+                                        foreach (var product in mauxe)
+                                        {
+                                            <option value="@product.Idmx">
+                                                @product.Tenmx
+                                            </option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <button style="margin-left:20px" type="submit" class="btn btn-primary">Lọc</button>
+
+                        </div>
+                        <div style="margin-left: 30px;
+                            border-radius: 20px;
+                            height: 40px;
+                            font-size: 20px;
+                            border: 2px;
+                            background: white;
+                            width: 150px;
+                            text-align: center;
+                            padding-top: 5px;
+                            box-shadow: rgba(44, 187, 99, .2) 0 -5px 18px">
+                            <a href="@Url.Action("ExportExcelDSXdanhap", "Phieunhapkhoes")" title="In danh sách phiếu nhập" class="btn-download" style="text-decoration:none;color: #15b72a;">
+                                <i class='fa fa-file-excel'></i>
+                                <span class="text">Xuất Excel</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </form>
+                <div id="contain_table">
+                    <div class="container-md" style="margin-top:18px; margin-bottom:10px; ">
+                        <div class="page-header">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Danh sách xe đã nhập
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom:10px">
+                        <table id="example10" class="table table-hover table-responsive table-responsive-xl">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th style="width:45px">
+                                        Mã PN
+                                    </th>
+                                    <th style="width:90px">
+                                        Tên xe
+                                    </th>
+                                    <th style="width:75px">
+                                        Màu
+                                    </th>
+                                    <th>Đời xe</th>
+                                    <th>Số khung</th>
+                                    <th>Số máy</th>
+                                    <th style="width:130px">Nhà cung cấp</th>
+                                    <th>
+                                        Bs lúc mua
+                                    </th>
+                                    <th>
+                                        Giá nhập
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int count2 = 1;
+                                }
+                                @foreach (Chitietxe item in ViewBag.xeDaNhap)
+                                {
+                                    <tr>
+                                        <td id="td_right">@count2</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdpnkNavigation.Mapnk)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdxeNavigation.Tenxe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdmxNavigation.Tenmx)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Doixe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sokhung)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Somay)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdpnkNavigation.IdnccNavigation.Tenncc)
+                                        </td>
+                                        <td>
+                                            @(item.Biensolucmua != null ? item.Biensolucmua : "Không có")
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Gianhap)
+                                        </td>
+                                        @* <td id="td_center" style="width:auto">
+
+                                            <button onclick="showModalEdit(this)" type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal"
+                                                    data-target="#editModal">
+                                                <i class="fas fa-pen text-white"></i>
+                                            </button>
+                                            <button onclick="showModalDetail(this)" type="button" class="btn btn-info btn-sm mb-1" data-toggle="modal"
+                                                    data-target="#detailModal">
+                                                <i class="fas fa-info-circle text-white"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger deleteBtn btn-sm mb-1"
+                                                    data-toggle="modal" data-target="#deleteModal">
+                                                <i class="fas fa-trash text-white"></i>
+                                            </button>
+                                        </td> *@
+                                        <td>
+                                            @if (item.Soluong == 1)
+                                            {
+                                                <span style="color: #00e600">Còn</span>
+                                            }
+                                            else
+                                            {
+                                                <span style="color: #ff3300">Đã bán</span>
+                                            }
+                                        </td>
+                                        @{
+                                            count2++;
+                                        }
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

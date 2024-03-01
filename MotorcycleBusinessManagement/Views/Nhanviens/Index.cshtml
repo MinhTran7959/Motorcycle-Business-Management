@@ -1,0 +1,595 @@
+﻿@model MotorcycleBusinessManagement.Models.Nhanvien;
+@using MotorcycleBusinessManagement.Models;
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+<style media="(max-width: 576px)">
+    .table-responsive td,
+    .table-responsive th {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .table-responsive tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive th {
+        flex-basis: 10%;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .table-responsive td {
+        flex-basis: 90%;
+        padding: 0.75rem 2rem;
+    }
+</style>
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item " style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <img src="~/image/xe.png" style="display: inline-block; width: 8%; height: 10%; float: left;" />
+    <img src="~/image/xe2.png" style="display: inline-block; width: 8%; height: 10%; float: right; transform: translateY(20%)" />
+    <div class="container-lg">
+        <ul class="nav nav-pills" id="mytab" role="tablist" style="background-color:#fff; margin-top:30px">
+            <li class="nav-item" role="presentation" style="width:50%">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="width:100%">
+                    <i class="fa fa-list-alt"></i> Danh sách nhân viên
+                </button>
+            </li>
+            <li class="nav-item" role="presentation" style="width:50%">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="width:100%">
+                    <i class="fa fa-eye-slash"></i> Danh sách nhân viên đã ẩn
+                </button>
+            </li>
+        </ul>
+
+        @if (@TempData["AlertSuccessMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: 'Nhân viên có mã @TempData["AlertSuccessMessage"] đã được tạo thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertUpdateMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: '@TempData["AlertSuccessMessage"] đã được cập nhật thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (TempData["AlertErrorMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'danger',
+                    title: 'Không thành công!',
+                    text: '@TempData["AlertErrorMessage"] thêm hoặc cập nhật không thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (TempData["AlertDeleteMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Xóa thành công!',
+                    text: '@TempData["AlertDeleteMessage"] đã xóa thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (TempData["AlertReturnMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Khôi phục thành công!',
+                    text: '@TempData["AlertReturnMessage"] đã khôi phục thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+
+
+        <script>
+
+            var object = { stat: false, ele: null };
+            function ConfirmDelete(ev) {
+
+                if (object.stat) { return true; };
+                swal({
+                    title: "Bạn muốn xóa dữ liệu này?",
+                    text: "Dữ liệu sẽ mất khỏi bảng!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Hủy",
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Xóa!",
+                    closeOnConfirm: true
+                },
+                    function () {
+                        /*swal("Xóa!", "Đã xóa thành công.", "success");*/
+                        object.stat = true;
+                        object.ele = ev;
+                        object.ele.click();
+                    });
+                return false;
+            };
+        </script>
+        <script>
+
+            var object = { stat: false, ele: null };
+            function ConfirmReturn(ev) {
+
+                if (object.stat) { return true; };
+                swal({
+                    title: "Bạn muốn khôi phục dữ liệu này?",
+                    text: "Dữ liệu sẽ được khôi phục!",
+                    type: "warning",
+                    showCancelButton: true,
+                    cancelButtonText: "Hủy",
+                    confirmButtonClass: "btn-success",
+                    confirmButtonText: "Khôi phục!",
+                    closeOnConfirm: true
+                },
+                    function () {
+                        /*swal("Xóa!", "Đã xóa thành công.", "success");*/
+                        object.stat = true;
+                        object.ele = ev;
+                        object.ele.click();
+                    });
+                return false;
+            };
+        </script>
+        <div class="tab-content" id="mytabcontent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                
+                <div id="code-container" class="container-md" style="border: 4px solid #DBC4F0; border-radius:10px; background-color:#fff; display:none; margin-top:30px;">
+                    <div class="page-header" style="margin-top:25px; margin-bottom:30px">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                            <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                Thêm nhân viên
+                            </h5>
+                        </div>
+                        <form asp-action="Create" method="post" enctype="multipart/form-data">
+                            <div>
+                                <div class="col-md-6 btn-group">
+                                    <div class="form-group col-8 p-0">
+                                        <b><label class="control-label">Hình ảnh:</label></b>
+                                        <div class="custom-file">
+                                            <input type="file" name="ProfilePhoto" class="custom-file-input" id="customFile"
+                                                   onchange="document.getElementById('PreviewPhoto').src=window.URL.createObjectURL(this.files[0])" />
+                                            <label class="custom-file-label" for="customFile">Chọn ảnh</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <img id="PreviewPhoto" src="~/image/blank_image.png" alt="Ảnh trống"
+                                             width="250" height="250" style="border:1px; margin-top:20px; border-radius:50%" />
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(".custom-file-input").on("change", function () {
+                                    var fileName = $(this).val().split("\\").pop();
+                                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                                });
+                            </script>
+                            <div class="row filter-row">
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Mã nhân viên:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <input type="text" name="Manv" value="@TempData["GoiYNv"]" style="background-color:#fff" readonly class="form-control floating" required/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Tên nhân viên:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <input type="text" name="Tennv" class="form-control floating" required />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Mã số thuế:</label>
+                                        </b>
+                                        <input type="text" name="Masothuenv" class="form-control floating" />
+                                    </div>
+                                </div>
+                            
+                            
+                                <div class="col-sm-7 col-md-3">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Số điện thoại:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <input type="text" name="Dienthoainv" class="form-control floating" required />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-3">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">CCCD/CMND:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <input type="text" name="Cccdnv" class="form-control floating" required />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-3">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Email:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <input type="email" name="Emailnv" class="form-control floating" required />
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-3">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Giới tính:</label>
+                                        </b>
+                                        <select class="select form-control" name="Gioitinh">
+                                            <option>Nam</option>
+                                            <option>Nữ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                           
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Quê quán:</label>
+                                        </b>
+                                        <textarea name="Quequannv" style="resize:none" class="form-control floating"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Địa chỉ:<span style="color:red"> (*)</span></label>
+                                        </b>
+                                        <textarea name="Diachinv" style="resize:none" class="form-control floating" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Ghi chú:</label>
+                                        </b>
+                                        <textarea name="Ghichu" style="resize:none" class="form-control floating"></textarea>
+                                    </div>
+                                </div>
+
+                            
+                                <div class="col-sm-7 col-md-4">
+                                    <div class="form-group form-focus">
+                                        <b>
+                                            <label class="focus-label">Ngày sinh:</label>
+                                        </b>
+                                        <input asp-for="Ngaysinh" class="form-control inputmask1 floating" />
+                                    </div>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $(".inputmask1").inputmask({
+                                                alias: "datetime",
+                                                inputFormat: "dd/mm/yyyy",
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                                <div class="col-sm-7 col-md-4" style="padding-top:24px; padding-left:13px">
+                                    <button type="submit" class="btn btn-info btn-outline-primary float-right btn-rounded">
+                                        <i class="fas fa-plus"></i> Thêm nhân viên
+                                    </button>
+                                </div>
+                                <div class="col-sm-7 col-md-3 py-4">
+                                    <div class="form-group">
+                                        <b>
+                                            <i><span style="color:red;">* là những trường bắt buộc nhập</span></i>
+                                        </b>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+                <div id="contain_table">
+                    <div class="container-md" style="margin-top:18px; margin-bottom:10px; ">
+                        <div class="page-header">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Danh sách nhân viên
+                                </h5>
+                            </div>
+
+                            <div style="float:right; width:30px; height:30px;">
+                                <button type="button" id="toggle-code-button" class="btn btn-sm btn-outline-success hover-effect"
+                                        title="Thêm khách hàng">
+                                    <i class='fas fa-plus fa-spin'></i>
+                                </button>
+                                
+                                <style>
+                                    .hover-effect {
+                                        background-color: #DBC4F0;
+                                        border-radius: 10px;
+                                        padding: 10px 15px;
+                                        transform: translateY(-25px) translateX(-10px);
+                                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                                    }
+
+                                        .hover-effect:hover {
+                                            transform: translateY(-35px) translateX(-10px); /* Di chuyển nút lên cao một chút */
+                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Hiển thị bóng đổ */
+                                        }
+                                </style>
+                                <script>
+                                    document.getElementById('toggle-code-button').addEventListener('click', function () {
+                                        var codeContainer = document.getElementById('code-container');
+                                        if (codeContainer.style.display === 'block') {
+                                            codeContainer.style.display = 'none';
+                                            this.innerHTML = '<i class="fas fa-plus fa-spin"></i>';
+                                        } else {
+                                            codeContainer.style.display = 'block';
+                                            this.innerHTML = '<i class="fas fa-minus fa-spin"></i>';
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom:10px">
+                        <table id="example" class="table  table-hover table-responsive table-responsive-xl">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        Mã nhân viên
+                                    </th>
+                                    <th>
+                                        Tên
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    
+                                    <th>
+                                        Ngày sinh
+                                    </th>
+
+
+                                    <th style="width:120px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                @foreach (Nhanvien item in ViewBag.ActiveNhanVien)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/imgNV/@item.Hinhanh" alt="" style="vertical-align: middle;
+                                                width:40px;
+                                                height:40px;
+                                                border-radius:50%;">
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Manv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Tennv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dienthoainv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Emailnv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Ngaysinh)
+                                        </td>
+                                        
+                                        
+                                        
+
+                                        <td id="td_center" >
+
+                                            <a asp-action="Edit" asp-route-id="@item.Idnv" class="btn btn-primary btn-sm mb-1" title="Cập nhật">
+                                                <i class="fas fa-pen text-white"></i>
+                                            </a>
+
+                                            <a asp-action="Details" asp-route-id="@item.Idnv" class="btn btn-info btn-sm mb-1" title="Chi tiết">
+                                                <i class="fas fa-info-circle text-white"></i>
+                                            </a>
+                                            <a asp-action="Hidden" asp-route-id="@item.Idnv" class="btn btn-danger btn-sm mb-1" title="Xóa" onclick="return ConfirmDelete(this);">
+                                                <i class="fas fa-trash text-white"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div id="contain_table">
+                    <div class="container-md" style="margin-top:18px; margin-bottom:10px;">
+                        <div class="page-header">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Danh sách nhân viên đã ẩn
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom:10px">
+                        <table id="example1" class="table table-hover table-responsive table-responsive-xl">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        Mã nhân viên
+                                    </th>
+                                    <th>
+                                        Tên
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Ngày sinh
+                                    </th>
+
+
+                                    <th style="width:120px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                @foreach (Nhanvien item in ViewBag.HiddenNhanVien)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="~/imgNV/@item.Hinhanh" alt="" style="vertical-align: middle;
+                                                width:40px;
+                                                height:40px;
+                                                border-radius:50%;">
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Manv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Tennv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Dienthoainv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Emailnv)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Ngaysinh)
+                                        </td>
+                                        
+                                        
+
+                                        <td id="td_center" style="width:auto">
+                                            <a asp-action="Edit" asp-route-id="@item.Idnv" class="btn btn-primary btn-sm mb-1" title="Cập nhật">
+                                                <i class="fas fa-pen text-white"></i>
+                                            </a>
+
+                                            <a asp-action="Details" asp-route-id="@item.Idnv" class="btn btn-info btn-sm mb-1" title="Chi tiết">
+                                                <i class="fas fa-info-circle text-white"></i>
+                                            </a>
+                                            <a asp-action="Return" asp-route-id="@item.Idnv" class="btn btn-danger btn-sm mb-1" title="Khôi phục" onclick="return ConfirmReturn(this);">
+                                                <i class="fas fa-undo text-white"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,90 @@
+﻿@model MotorcycleBusinessManagement.Models.Account
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" type="image/x-icon" href="~/image/cvg.jpg">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    @*link thì sài bằng thể i*@
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    @*script thì sài bằng thẻ box-icon*@
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- My CSS -->
+    <link rel="stylesheet" href="~/css/login1.css">
+    @* <link rel="stylesheet" href="~/css/login2.css"> *@
+    <title>Đăng nhập</title>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  
+    <!--sweetalert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="login100-pic js-tilt" data-tilt>
+                    <img src="~/image/cvgstore_logo.png" />
+                </div>
+
+                <form class="login100-form validate-form" asp-action="Login" method="post">
+                    <h1 class="login100-form-title" style="color: rgba(99, 255, 71, 1)">
+                        Đăng nhập
+                    </h1>
+                    @if (@TempData["LoginFailed"] != null)
+                    {
+                        <div class="alert alert-success" style="color:red">
+                            <strong>Lỗi!!! </strong>@TempData["LoginFailed"]
+                        </div>
+                        <script>
+                                swal({
+                                    type: 'warning',
+                                    title: 'Lỗi đăng nhập',
+                                    text: '@TempData["LoginFailed"] Tài khoản hoặc mật khẩu sai, vui lòng nhập lại!!!',
+                                    showCloseButton: true,
+                                    confirmButtonText: 'Đóng'
+                                });
+                       </script>
+                    }
+                    <br />
+                    <div class="wrap-input100 validate-input" data-validate="Username is required">
+                        <input class="input100" asp-for="Username" placeholder="Tài khoản" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" asp-for="Password" placeholder="Mật khẩu" required>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+
+                        <input type="submit" class="login100-form-btn" value="Đăng nhập" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

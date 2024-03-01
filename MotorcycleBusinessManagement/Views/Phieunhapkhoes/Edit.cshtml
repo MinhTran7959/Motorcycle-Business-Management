@@ -1,0 +1,574 @@
+﻿@model MotorcycleBusinessManagement.Models.Phieunhapkho
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item " style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <div class="container-lg" style="margin-top:30px">
+        <div class="content-page">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Chỉnh sửa phiếu nhập kho
+                                </h5>
+                            </div>
+                            <script>
+                                var object = { stat: false, ele: null };
+                                function ConfirmEdit(ev) {
+                                    if (object.stat) {
+                                        return true;
+                                    };
+
+                                    Swal.fire({
+                                        title: 'Bạn có muốn lưu thay đổi?',
+                                        showDenyButton: false,
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Lưu',
+                                        cancelButtonText: `Không lưu`,
+                                    }).then((result) => {
+                                        /* Read more about isConfirmed, isDenied below */
+                                        if (result.isConfirmed) {
+                                            /*Swal.fire('Lưu!', '', 'success')*/
+                                            object.stat = true;
+                                            object.ele = ev;
+                                            object.ele.click();
+                                        }
+                                    });
+                                    return false;
+                                };
+
+                            </script>
+                            <form id="ApplicantForm" asp-action="Edit" method="post">
+                                <div class="row mx-1 py-2" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                    <input type="hidden" asp-for="Idpnk" />
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Mã phiếu nhập</label></b>
+                                            <input asp-for="Mapnk" class="form-control" readonly style="color:#0099ff; background:#fff" />
+                                            <span asp-validation-for="Mapnk" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Ngày nhập</label></b>
+                                            <input required asp-for="Ngaynhap" class="form-control inputmask1 floating" />
+                                            <script>
+                                                $(document).ready(function () {
+                                                    
+                                                    $(".inputmask1").inputmask({
+                                                        alias: "datetime",
+                                                        inputFormat: "dd/mm/yyyy",
+                                                    });
+                                                });
+                                            </script>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Số hóa đơn</label></b>
+                                            <input asp-for="Sohd" class="form-control" />
+                                            <span asp-validation-for="Sohd" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group mt-2">
+                                            <b><label>Ngày hóa đơn</label></b>
+                                            <input asp-for="Ngayhd" class="form-control inputmask2 floating" />
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $(".inputmask2").inputmask({
+                                                alias: "datetime",
+                                                inputFormat: "dd/mm/yyyy",
+                                            });
+                                        });
+                                    </script>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group  mt-2">
+                                            <b><label>Thông tin nhà cung cấp:</label></b>
+                                            <select asp-for="Idncc" id="sample-select" size="5" placeholder="--Chọn nhà cung cấp--" required>
+                                                @if (TempData["Nhacungcap"] is List<Nhacungcap> nhaCungCap)
+                                                {
+                                                    foreach (var product in nhaCungCap)
+                                                    {
+                                                        <option value="@product.Idncc">
+                                                            @product.Mancc - @product.Tenncc - @product.Diachincc
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group  mt-2">
+                                            <b><label>Thông tin nhân viên nhập:</label></b>
+                                            <select asp-for="Idnv" id="sample-select" size="5" placeholder="--Chọn nhân viên--" required>
+                                                @if (TempData["Nhanvien"] is List<Nhanvien> nhanVien)
+                                                {
+                                                    foreach (var employee in nhanVien)
+                                                    {
+                                                        <option value="@employee.Idnv">
+                                                            @employee.Manv - @employee.Tennv - @employee.Diachinv
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px; margin-top:15px">
+                                    <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                        Tạo chi tiết nhập
+                                    </h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="table-responsive" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                            <table id="ExpTable" class="table custom-table">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Tên xe</th>
+                                                        <th style="width:180px">Màu xe</th>
+                                                        <th>Đời xe</th>
+                                                        <th style="width:140px">Giá nhập</th>
+                                                        <th style="width:140px">Giá bán</th>
+                                                        <th style="width:135px;">Số khung</th>
+                                                        <th style="width:135px;">Số máy</th>
+                                                        <th>Bs lúc mua</th>
+                                                        <th>Bảo hành</th>
+                                                        <th>
+                                                            <button type="button" class="btn btn-sm btn-success btn-outline-success visible"
+                                                                    onclick="AddItem(this)">
+                                                                <i class="fas fa-plus text-white"></i>
+                                                            </button>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    @for (int i = 0; i < Model.Chitietxes.Count; i++)
+                                                    {
+                                                        <tr>
+
+                                                            <td>
+                                                                <select asp-for="@Model.Chitietxes[i].Idxe" class="form-control tenxe">
+                                                                    @if (TempData["Tenxe"] is List<Xe> xe)
+                                                                    {
+                                                                        foreach (var tenxe in xe)
+                                                                        {
+                                                                            <option value="@tenxe.Idxe">
+                                                                                @tenxe.Maxe @tenxe.Tenxe
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select asp-for="@Model.Chitietxes[i].Idmx" class="form-control mauxe">
+                                                                    @if (TempData["Tenmx"] is List<Mauxe> mx)
+                                                                    {
+                                                                        foreach (var mxe in mx.Where(x => x.Ndxemauxes.Any(y => y.Idxe == Model.Chitietxes[i].Idxe)))
+                                                                        {
+                                                                            <option value="@mxe.Idmx">
+                                                                                @mxe.Tenmx
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Doixe" class="form-control" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Doixe" class="text-danger"></span>
+                                                            </td>
+                                                            <input asp-for="@Model.Chitietxes[i].Idpnk" type="hidden" class="form-control" />
+                                                            
+                                                            <input asp-for="@Model.Chitietxes[i].Idpxk" type="hidden" class="form-control" />
+                                                            <input asp-for="@Model.Chitietxes[i].Soluong" type="hidden" class="form-control" />
+                                                            
+                                                            <input asp-for="@Model.Chitietxes[i].Trangthai" type="hidden" class="form-control" />
+                                                            
+                                                            <input asp-for="@Model.Chitietxes[i].Biensolucban" type="hidden" class="form-control" />
+
+                                                            <input id="ixacnhan-@i" asp-for="@Model.Chitietxes[i].Active" value="true" type="hidden" class="form-control" />
+                                                            <td>
+                                                                <input oninput="formatCurrencyAndTotal(this);" id="Gianhap-@i" asp-for="@Model.Chitietxes[i].Gianhap" asp-format="{0:N0}" class="form-control gianhap" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Gianhap" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input oninput="formatGia(this)" asp-for="@Model.Chitietxes[i].Giaban" asp-format="{0:N0}" class="form-control" style="text-align:right" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Giaban" class="text-danger"></span>
+                                                            </td>
+
+                                                            <script>
+                                                                function formatGia(input) {
+                                                                    var valuegb = input.value.replace(/\D/g, '');
+                                                                    var formattergb = new Intl.NumberFormat('vi-VN');
+
+                                                                    // Sử dụng formatter.format để có định dạng chuẩn
+                                                                    var formattedValuegb = formattergb.format(valuegb);
+
+                                                                    // Kiểm tra xem đã có dấu "," hay chưa, nếu chưa thì thêm vào
+                                                                    if (formattedValuegb.indexOf(',') === -1) {
+                                                                        formattedValuegb = formattedValuegb.replace(/\./g, ',');
+                                                                    }
+
+                                                                    input.value = formattedValuegb;
+                                                                }
+                                                            </script>
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Sokhung" class="form-control sokhung" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Sokhung" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Somay" class="form-control somay" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Somay" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Biensolucmua" class="form-control biensolucmua" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Biensolucmua" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <select class="select form-control" asp-for="@Model.Chitietxes[i].Thoigianbaohanh">
+                                                                    <option value="0">Không bảo hành</option>
+                                                                    <option value="30">1 tháng</option>
+                                                                    <option value="90">3 tháng</option>
+                                                                    <option value="180">6 tháng</option>
+                                                                    <option value="360">1 năm</option>
+                                                                    <option value="720">2 năm</option>
+                                                                    <option value="980">3 năm</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <button id="btnremove-@i" type="button" class="btn btn-sm btn-danger btn-outline-danger visible"
+                                                                        onclick="DeleteItem(this)">
+                                                                    <i class="fas fa-trash text-white"></i>
+                                                                </button>
+                                                            </td>
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="col-8 py-3"
+                                                            style="text-align: right; font-weight: bold; padding-top:5px">
+                                                            <i class="fas fa-dollar-sign" style="color:#00cc7a"></i> Tổng tiền
+                                                        </td>
+                                                        <td class="col-4">
+                                                            <input asp-for="Tongtiennhap" class="form-control-plaintext" id="itongtienhang"
+                                                                   readonly type="text">
+                                                            <span asp-validation-for="Tongtiennhap" class="text-danger"></span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 btn-group">
+                                    <div class="col-6 form-group text-right p-2">
+                                        <a asp-action="Index" class="btn btn-secondary" style="float: right;">&nbsp;Quay về&nbsp;</a>
+                                    </div>
+                                    <div class="col-6 form-group text-left p-2">
+                                        <input type="submit" value="Lưu" class="btn btn-primary" onclick="return ConfirmEdit(this);" />
+                                    </div>
+                                    @if (Model.Dachi == true)
+                                    {
+                                        <div class="col-6 form-group text-left p-2">
+                                            <input type="submit" value="Lưu" class="btn btn-primary" onclick="return ConfirmEdit(this);" disabled />
+                                            <b><p style="color:red">* Phiếu @Model.Mapnk này đã trả tiền nên không thể chỉnh sửa</p></b>
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <div class="col-6 form-group text-left p-2">
+                                            <input type="submit" value="Lưu" class="btn btn-primary" onclick="return ConfirmEdit(this);" />
+                                        </div>
+                                    }
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript">
+        function DeleteItem(btn) {
+            var table = document.getElementById('ExpTable');
+            var rows = table.getElementsByTagName('tr');
+
+            var visibleRowCount = 0;
+            for (var i = 1; i < rows.length; i++) {
+                if (rows[i].style.display !== 'none') {
+                    visibleRowCount++;
+                }
+            }
+
+            if (visibleRowCount == 1) {
+                return;
+            }
+            else {
+                $(btn).closest('tr').hide();
+                // Gọi hàm Xoadonghide() để cập nhật giá trị
+                Xoadonghide();
+            }
+
+            var row = $(btn).closest('tr');
+            var gianhapInput = row.find('input[id^="Gianhap-"]');
+            gianhapInput.val(0);
+
+            // Gọi hàm formatCurrencyAndTotal() để định dạng lại giá trị và cập nhật tổng tiền
+            formatCurrencyAndTotal(gianhapInput[0]);
+
+            // Ẩn hàng trong bảng
+            row.hide();
+        }
+
+
+        function AddItem(btn) {
+
+            var table;
+            table = document.getElementById('ExpTable');
+            var rows = table.getElementsByTagName('tr');
+            var rowOuterHtml = rows[rows.length - 1].outerHTML;
+
+            var lastrowIdx = rows.length - 2;
+
+            var nextrowIdx = eval(lastrowIdx) + 1;
+
+            rowOuterHtml = rowOuterHtml.replaceAll('_' + lastrowIdx + '_', '_' + nextrowIdx + '_');
+            rowOuterHtml = rowOuterHtml.replaceAll('[' + lastrowIdx + ']', '[' + nextrowIdx + ']');
+            rowOuterHtml = rowOuterHtml.replaceAll('-' + lastrowIdx, '-' + nextrowIdx);
+
+            // rowOuterHtml = rowOuterHtml.replace(new RegExp('_' + lastrowIdx + '_', 'g'), '_' + nextrowIdx + '_');
+            // rowOuterHtml = rowOuterHtml.replace(new RegExp('\\[' + lastrowIdx + '\\]', 'g'), '[' + nextrowIdx + ']');
+            // rowOuterHtml = rowOuterHtml.replace(new RegExp('-' + lastrowIdx, 'g'), '-' + nextrowIdx);
+
+
+            var newRow = table.insertRow();
+            newRow.innerHTML = rowOuterHtml;
+
+            var ixacnhanInput = newRow.querySelector('input[id^="ixacnhan-"]');
+            if (ixacnhanInput) {
+                ixacnhanInput.value = 'true';
+            }
+
+            rebindvalidators();
+            $('#ExpTable tr:last').find('.mauxe').empty();
+           
+        }
+
+        function rebindvalidators() {
+            var $form = $("#ApplicantForm");
+
+            $form.unbind();
+
+            $form.data("validator", null);
+
+            $.validator.unobtrusive.parse($form);
+
+            $form.validate($form.data("unobtrusiveValidation").options);
+        }
+        function Xoadonghide() {
+            var table = document.getElementById('ExpTable');
+            var rows = table.getElementsByTagName('tr');
+            var ip = 0;
+
+            for (var i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để tránh hàng tiêu đề
+                ip = i - 1;
+                var row = rows[i];
+                var isHidden = row.style.display === 'none';
+                var xacnhanInput = document.getElementById('ixacnhan-' + ip);
+
+                if (xacnhanInput && isHidden) {
+                    xacnhanInput.value = 'false';
+                }
+            }
+        }
+        function submitForm() {
+            document.getElementById("ApplicantForm").submit();
+        }
+    </script>
+    <script>
+        function formatCurrency(input) {
+
+            var value = input.value.replace(/\D/g, '');
+            var formatter = new Intl.NumberFormat('vi-VN');
+            var formattedValue = formatter.format(value);
+
+            // Thay thế dấu "." bằng dấu ","
+            formattedValue = formattedValue.replace(/\./g, ',');
+
+            input.value = formattedValue;
+
+            // Cập nhật tổng tiền hàng
+            Tongtienhang();
+        }
+        function formatCurrencyAndTotal(input) {
+            formatCurrency(input);
+
+            var total = 0;
+            var ithanhtienElements = document.querySelectorAll('[id^="Gianhap-"]');
+
+            ithanhtienElements.forEach(function (element) {
+                var ithanhtien = parseFloat(element.value.replace(/\D/g, '')) || 0;
+                total += ithanhtien;
+            });
+
+            var itongtienhang = document.getElementById("itongtienhang");
+            if (itongtienhang) {
+                var formatter = new Intl.NumberFormat('vi-VN');
+                var formattedTotal = formatter.format(total);
+                formattedTotal = formattedTotal.replace(/\./g, ',');
+
+                itongtienhang.value = formattedTotal;
+            }
+        }
+
+        function submitForm() {
+            document.getElementById("ApplicantForm").submit();
+        }
+    </script>
+    <script>
+        function Tongtienhang() {
+            var total = 0;
+
+            var ithanhtienElements = document.querySelectorAll('[id^="Gianhap-"]');
+
+            ithanhtienElements.forEach(function (element) {
+                var ithanhtien = parseFloat(element.value.replace(/\D/g, '')) || 0;
+                total += ithanhtien;
+            });
+
+            var itongtienhang = document.getElementById("itongtienhang");
+            if (itongtienhang) {
+                var formatter = new Intl.NumberFormat('vi-VN');
+                var formattedTotal = formatter.format(total);
+                formattedTotal = formattedTotal.replace(/\./g, ',');
+
+                itongtienhang.value = formattedTotal;
+            }
+        }
+        window.onload = Tongtienhang;
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            // Xử lý sự kiện khi tên xe thay đổi
+            $(document).on('change', '.tenxe', function () {
+                // Lấy giá trị tên xe đã chọn
+                var selectedTenxe = $(this).val();
+                var tr = $(this).closest('tr');
+
+                // Kiểm tra nếu tên xe đã chọn không rỗng
+                if (selectedTenxe) {
+                    // Gọi hàm Ajax để tải danh sách màu xe dựa vào tên xe
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Phieunhapkhoes/GetColorsByXe', // Điều chỉnh đường dẫn và tên controller của bạn
+                        data: { Idxe: selectedTenxe },
+                        success: function (data) {
+                            var mauxeSelect = tr.find('select.mauxe');
+                            // Xóa tất cả các tùy chọn hiện có trong select "mauxe"
+                            mauxeSelect.empty();
+
+                            //Thêm các tùy chọn mới dựa trên dữ liệu từ máy chủ
+                            $.each(data, function (index, item) {
+                                mauxeSelect.append($('<option>', {
+                                    value: item.idmx,
+                                    text: item.tenMau
+                                }));
+                            });
+                        }
+                    });
+                } else {
+                    // Nếu tên xe đã chọn là rỗng, xóa tất cả các tùy chọn khỏi select "mauxe"
+                    mauxeSelect.empty();
+                }
+            });
+
+            // // Khi trang được tải lên, kiểm tra giá trị ban đầu của tên xe và kích hoạt sự kiện change nếu tên xe không rỗng
+            // if (tenxeSelect.val() !== '') {
+            //     tenxeSelect.trigger('change');
+            // }
+        });
+    </script>
+}

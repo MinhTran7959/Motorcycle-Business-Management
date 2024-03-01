@@ -1,0 +1,82 @@
+﻿#productDropdownContainer {
+    position: relative;
+}
+
+#productList {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+    #searchInput:focus + #productList, #productList:hover {
+        display: block;
+    }
+
+
+.selectize-control.contacts .selectize-input > div .email {
+    opacity: 0.8;
+}
+
+.selectize-control.contacts .selectize-input > div .name + .email {
+    margin-left: 5px;
+}
+
+.selectize-control.contacts .selectize-input > div .email:before {
+    content: "<";
+}
+
+.selectize-control.contacts .selectize-input > div .email:after {
+    content: ">";
+}
+
+.selectize-control.contacts .selectize-dropdown .caption {
+    font-size: 12px;
+    display: block;
+    color: #a0a0a0;
+}
+
+
+
+
+
+
+
+
+#productDropdownContainerNV {
+    position: relative;
+}
+
+#productListNV {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+    #searchInputNV:focus + #productListNV, #productListNV:hover {
+        display: block;
+    }
+
+
+.selectize-control.contacts .selectize-input > div .email {
+    opacity: 0.8;
+}
+
+.selectize-control.contacts .selectize-input > div .name + .email {
+    margin-left: 5px;
+}
+
+.selectize-control.contacts .selectize-input > div .email:before {
+    content: "<";
+}
+
+.selectize-control.contacts .selectize-input > div .email:after {
+    content: ">";
+}
+
+.selectize-control.contacts .selectize-dropdown .caption {
+    font-size: 12px;
+    display: block;
+    color: #a0a0a0;
+}

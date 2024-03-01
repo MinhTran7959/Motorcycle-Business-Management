@@ -1,0 +1,357 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MotorcycleBusinessManagement
+build_property.RootNamespace = MotorcycleBusinessManagement
+build_property.ProjectDir = D:\08_CNPM\DoAnTotNghiep\cc\07_PhanThanhHai_0850080017\MotorcycleBusinessManagement\MotorcycleBusinessManagement\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\08_CNPM\DoAnTotNghiep\cc\07_PhanThanhHai_0850080017\MotorcycleBusinessManagement\MotorcycleBusinessManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/ItemIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcSXRlbUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Accounts/_EditPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcX0VkaXRQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Chitietxes/Tonkho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpdGlldHhlc1xUb25raG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Chitietxes/Trangchu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hpdGlldHhlc1xUcmFuZ2NodS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Httts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHR0dHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Httts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHR0dHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Khachhangs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hoYW5nc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Khachhangs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hoYW5nc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Khachhangs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hoYW5nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Loaixes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9haXhlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Loaixes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9haXhlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Mauxes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF1eGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Mauxes/EditMauCuaXe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF1eGVzXEVkaXRNYXVDdWFYZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Mauxes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWF1eGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhacungcaps/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhY3VuZ2NhcHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhacungcaps/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhY3VuZ2NhcHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhacungcaps/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhY3VuZ2NhcHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhanviens/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhbnZpZW5zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhanviens/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhbnZpZW5zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Nhanviens/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmhhbnZpZW5zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungchis/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ2NoaXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungchis/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ2NoaXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungchis/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ2NoaXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungchis/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ2NoaXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungchis/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ2NoaXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungthus/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ3RodXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungthus/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ3RodXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungthus/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ3RodXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungthus/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ3RodXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Noidungthus/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm9pZHVuZ3RodXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/DownPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xEb3duUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/Indexold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xJbmRleG9sZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuchitiennhapxes/IndexPDC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVjaGl0aWVubmhhcHhlc1xJbmRleFBEQy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/CreateNCC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcQ3JlYXRlTkNDLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/CreateNCCXeCu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcQ3JlYXRlTkNDWGVDdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/CreateXeCu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcQ3JlYXRlWGVDdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/DownPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcRG93blBERi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/Indexold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcSW5kZXhvbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/IndexXeCu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcSW5kZXhYZUN1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieunhapkhoes/IndexXeDaNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXVuaGFwa2hvZXNcSW5kZXhYZURhTmhhcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/DownPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXERvd25QREYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/Indexold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXEluZGV4b2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuthutienbanxes/IndexPDT.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV0aHV0aWVuYmFueGVzXEluZGV4UERULmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/CreateKH.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xDcmVhdGVLSC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Create_old.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xDcmVhdGVfb2xkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/DownPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xEb3duUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/Indexold.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xJbmRleG9sZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Phieuxuats/IndexXeDaBan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGhpZXV4dWF0c1xJbmRleFhlRGFCYW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/List_Index_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExpc3RfSW5kZXhfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/List_Item_Index_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExpc3RfSXRlbV9JbmRleF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/Modal_layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1vZGFsX2xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Xes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWGVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Xes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWGVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/08_CNPM/DoAnTotNghiep/cc/07_PhanThanhHai_0850080017/MotorcycleBusinessManagement/MotorcycleBusinessManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ra8hurqnl6

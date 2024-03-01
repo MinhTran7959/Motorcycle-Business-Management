@@ -1,0 +1,961 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MotorcycleBusinessManagement.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MotorcycleBusinessManagement.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\dataTables.bootstrap5.min.css",
+      "PackagePath": "staticwebassets\\css\\dataTables.bootstrap5.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\dropdown.css",
+      "PackagePath": "staticwebassets\\css\\dropdown.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\login1.css",
+      "PackagePath": "staticwebassets\\css\\login1.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\myCustomTable.css",
+      "PackagePath": "staticwebassets\\css\\myCustomTable.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\tooltip.css",
+      "PackagePath": "staticwebassets\\css\\tooltip.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\css\\virtualselect.css",
+      "PackagePath": "staticwebassets\\css\\virtualselect.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\CVGstore_logo.png",
+      "PackagePath": "staticwebassets\\image\\CVGstore_logo.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\Xe1.png",
+      "PackagePath": "staticwebassets\\image\\Xe1.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\Xe6.png",
+      "PackagePath": "staticwebassets\\image\\Xe6.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\blank_image.png",
+      "PackagePath": "staticwebassets\\image\\blank_image.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\cvg.jpg",
+      "PackagePath": "staticwebassets\\image\\cvg.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\hai.jpg",
+      "PackagePath": "staticwebassets\\image\\hai.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\xe.png",
+      "PackagePath": "staticwebassets\\image\\xe.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\xe2.png",
+      "PackagePath": "staticwebassets\\image\\xe2.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\xe4.png",
+      "PackagePath": "staticwebassets\\image\\xe4.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\image\\xe5.png",
+      "PackagePath": "staticwebassets\\image\\xe5.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\04afd59a-90b0-40fc-89f0-0c4fbfccd1e6-Dạt.png",
+      "PackagePath": "staticwebassets\\imgNV\\04afd59a-90b0-40fc-89f0-0c4fbfccd1e6-Dạt.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\085ddec1-9072-4dff-b14d-4fdf4656797b_cat3.png",
+      "PackagePath": "staticwebassets\\imgNV\\085ddec1-9072-4dff-b14d-4fdf4656797b_cat3.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\19eca86e-9c49-48b7-b481-60d033fc48e9_bomb.png",
+      "PackagePath": "staticwebassets\\imgNV\\19eca86e-9c49-48b7-b481-60d033fc48e9_bomb.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\34d9517d-bc18-422c-ad40-3efba7ffdf69_pinkfrog.png",
+      "PackagePath": "staticwebassets\\imgNV\\34d9517d-bc18-422c-ad40-3efba7ffdf69_pinkfrog.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\390727a8-9952-45a0-a194-f54e3f9c290a-nhandien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\390727a8-9952-45a0-a194-f54e3f9c290a-nhandien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\3bb0696c-05bd-4065-9643-5a4b9e22acb7-Tai.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\3bb0696c-05bd-4065-9643-5a4b9e22acb7-Tai.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\3dda4bb6-69d5-4174-a4c7-d5b2e19c0f64-nhandien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\3dda4bb6-69d5-4174-a4c7-d5b2e19c0f64-nhandien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\543d593e-7241-48e9-b9e5-cafca360f783-backgroundmain.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\543d593e-7241-48e9-b9e5-cafca360f783-backgroundmain.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\54f90012-03c1-4783-bd66-ba8eb2bfec40-H.Anh.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\54f90012-03c1-4783-bd66-ba8eb2bfec40-H.Anh.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\5858f974-adcc-41a4-b85b-88624cf434e4-Dạt.png",
+      "PackagePath": "staticwebassets\\imgNV\\5858f974-adcc-41a4-b85b-88624cf434e4-Dạt.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\5da32060-b0fe-45a2-8aa3-c89ce8e33ed8-nhandien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\5da32060-b0fe-45a2-8aa3-c89ce8e33ed8-nhandien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\8331dc58-7748-464f-b4e8-b9158c165551-Account.png",
+      "PackagePath": "staticwebassets\\imgNV\\8331dc58-7748-464f-b4e8-b9158c165551-Account.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\89a5f64e-10a0-4376-a34a-7c9a054e65db-Yona.png",
+      "PackagePath": "staticwebassets\\imgNV\\89a5f64e-10a0-4376-a34a-7c9a054e65db-Yona.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\94c2becb-150b-4a39-841e-bcb49657d127-Minh.png",
+      "PackagePath": "staticwebassets\\imgNV\\94c2becb-150b-4a39-841e-bcb49657d127-Minh.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\a010f9eb-7906-4035-aa62-224ef97340b9-Yona.png",
+      "PackagePath": "staticwebassets\\imgNV\\a010f9eb-7906-4035-aa62-224ef97340b9-Yona.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\a11fef55-ec67-492e-b016-81ed2a770ff2-nhandien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\a11fef55-ec67-492e-b016-81ed2a770ff2-nhandien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\aa19538b-0458-4974-bc3e-3e216a7108aa-Dạt.png",
+      "PackagePath": "staticwebassets\\imgNV\\aa19538b-0458-4974-bc3e-3e216a7108aa-Dạt.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\ab408e92-3784-4099-ac20-260623839711-Hien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\ab408e92-3784-4099-ac20-260623839711-Hien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\af4974c9-9978-4d4f-b957-042b508ceb84-Dung.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\af4974c9-9978-4d4f-b957-042b508ceb84-Dung.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\b1f22346-54c3-43e0-9207-29b6852e99c0-anhnenduoi.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\b1f22346-54c3-43e0-9207-29b6852e99c0-anhnenduoi.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\c83bfc23-34e9-41bb-9a4b-b989934d3143-Tung.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\c83bfc23-34e9-41bb-9a4b-b989934d3143-Tung.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\c99a765e-aed3-41e6-a879-eace350f800a-nhandien.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\c99a765e-aed3-41e6-a879-eace350f800a-nhandien.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\d548716a-5fac-4658-89a6-d439f4980f91-loveinwar_3.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\d548716a-5fac-4658-89a6-d439f4980f91-loveinwar_3.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\d91bc041-bd97-4ecb-9c11-a3108281b4f4_Yona.png",
+      "PackagePath": "staticwebassets\\imgNV\\d91bc041-bd97-4ecb-9c11-a3108281b4f4_Yona.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\dfa1e142-21b1-469d-9259-61be8edff3a9-Yona.png",
+      "PackagePath": "staticwebassets\\imgNV\\dfa1e142-21b1-469d-9259-61be8edff3a9-Yona.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\eddbb846-65f6-4c28-aa1d-20aa091d866e_cat3.png",
+      "PackagePath": "staticwebassets\\imgNV\\eddbb846-65f6-4c28-aa1d-20aa091d866e_cat3.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\eeac129f-33c8-4bb7-8f15-2d7ddf6a3237-anhnen.jpg",
+      "PackagePath": "staticwebassets\\imgNV\\eeac129f-33c8-4bb7-8f15-2d7ddf6a3237-anhnen.jpg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\fc193d9f-c689-430e-b011-7e83012cb7cb_hai.JPG",
+      "PackagePath": "staticwebassets\\imgNV\\fc193d9f-c689-430e-b011-7e83012cb7cb_hai.JPG"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\fd29d4d0-2dc1-48a8-b39e-e34a1d7824e4-Dạt.png",
+      "PackagePath": "staticwebassets\\imgNV\\fd29d4d0-2dc1-48a8-b39e-e34a1d7824e4-Dạt.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\imgNV\\fe66cf76-9d0a-41bb-a030-a577b7255477-bg.png",
+      "PackagePath": "staticwebassets\\imgNV\\fe66cf76-9d0a-41bb-a030-a577b7255477-bg.png"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\chart.js",
+      "PackagePath": "staticwebassets\\js\\chart.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\customAccountModal.js",
+      "PackagePath": "staticwebassets\\js\\customAccountModal.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\customDatetime.js",
+      "PackagePath": "staticwebassets\\js\\customDatetime.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\customchart.js",
+      "PackagePath": "staticwebassets\\js\\customchart.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\datatable-custom.js",
+      "PackagePath": "staticwebassets\\js\\datatable-custom.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\dropdown.js",
+      "PackagePath": "staticwebassets\\js\\dropdown.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\hiddenAndShowDiv.js",
+      "PackagePath": "staticwebassets\\js\\hiddenAndShowDiv.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\jquery-3.5.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.5.1.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\jquery-3.6.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.1.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\jquery-3.7.0.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.7.0.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\myCustomDatatable.js",
+      "PackagePath": "staticwebassets\\js\\myCustomDatatable.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\phieuchitien.js",
+      "PackagePath": "staticwebassets\\js\\phieuchitien.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\phieuthutien.js",
+      "PackagePath": "staticwebassets\\js\\phieuthutien.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\phieuxuatkho.js",
+      "PackagePath": "staticwebassets\\js\\phieuxuatkho.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\tooltip.js",
+      "PackagePath": "staticwebassets\\js\\tooltip.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\js\\virtualselect.js",
+      "PackagePath": "staticwebassets\\js\\virtualselect.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\css\\all.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\css\\all.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400-1.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400-1.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400-1.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400-1.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900-1.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900-1.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\plugins\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_accordion.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_accordion.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_alert.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_badge.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_badge.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_button-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_card.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_card.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_carousel.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_close.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_close.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_containers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_containers.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_forms.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_functions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_functions.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_grid.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_helpers.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_helpers.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_images.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_images.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_modal.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_modal.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_nav.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_nav.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_navbar.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_offcanvas.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_popover.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_popover.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_progress.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_progress.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_root.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_root.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_spinners.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_spinners.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_tables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tables.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_toasts.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_toasts.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_transitions.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_type.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_type.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_labels.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\forms\\_validation.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_position.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_container.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\utilities\\_api.scss"
+    },
+    {
+      "Id": "D:\\08_CNPM\\DoAnTotNghiep\\cc\\07_PhanThanhHai_0850080017\\MotorcycleBusinessManagement\\MotorcycleBusinessManagement\\wwwroot\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.MotorcycleBusinessManagement.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.MotorcycleBusinessManagement.props",
+      "PackagePath": "build\\MotorcycleBusinessManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.MotorcycleBusinessManagement.props",
+      "PackagePath": "buildMultiTargeting\\MotorcycleBusinessManagement.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.MotorcycleBusinessManagement.props",
+      "PackagePath": "buildTransitive\\MotorcycleBusinessManagement.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

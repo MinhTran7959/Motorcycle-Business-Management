@@ -1,0 +1,98 @@
+﻿@model Account
+
+<div class="modal fade" id="editModal-@Model.Idacc" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog w-90" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModal">Cập nhật thông tin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formEdit" asp-controller="Accounts" asp-action="Edit" method="post">
+
+                <div class="modal-body">
+                    <input asp-for="Idacc" type="hidden">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Tài khoản
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input asp-for="Username"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Mật khẩu
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input asp-for="Password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Số điện thoại
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input asp-for="Phone" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Email
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input asp-for="Email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Vai trò
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <select class="select form-control" asp-for="Role">
+                                        <option value="User">Nhân viên</option>
+                                        <option value="Admin">Quản trị</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Trạng thái
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    @{
+                                        bool isActive = Model.Active.HasValue ? Model.Active.Value : false;
+                                    }
+                                    <input type="checkbox" name="Active" value="true" @(isActive ? "checked" : "") />
+                                    <input type="hidden" name="Active" value="false" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" id="editButton" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,91 @@
+﻿#contain_table {
+    border: 4px solid #0080ed;
+    border-radius: 8px;
+    background-color:rgb(168 175 189 / 10%);
+    margin-top: 30px;
+}
+
+#example {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example1 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example2 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example3 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example4 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+
+#example5 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+
+#example6 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+
+#example7 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example8 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example9 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+#example10 {
+    background-color: #fff;
+    max-width: 100%;
+    min-width: auto;
+    height: auto;
+}
+thead {
+    text-align-last: center;
+    background-color: #FAF3F0;
+}
+td {
+    border: 1px solid #f2f2f2;
+    border-radius: 8px;
+}
+
+#td_right{
+    text-align:right;
+}
+#td_center {
+    text-align: center;
+}

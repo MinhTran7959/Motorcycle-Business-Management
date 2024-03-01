@@ -1,0 +1,195 @@
+﻿@model MotorcycleBusinessManagement.Models.Xe
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+<style media="(max-width: 576px)">
+    .table-responsive td,
+    .table-responsive th {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .table-responsive tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive th {
+        flex-basis: 10%;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .table-responsive td {
+        flex-basis: 90%;
+        padding: 0.75rem 2rem;
+    }
+</style>
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <div class="container-md" style="border: 4px solid #DBC4F0; border-radius:10px; background-color:#fff;margin-top:10%">
+        <div class="page-header" style="margin-top:25px; margin-bottom:30px">
+            <div class="col-lg-8 col-md-8 col-sm-8 col-8" style="margin-bottom:15px">
+                <h1 class="text-uppercase mb-0 mt-0 page-title center">
+                    Cập nhật thông tin xe
+                </h1>
+            </div>
+            <script>
+                var object = { stat: false, ele: null };
+                function ConfirmEdit(ev) {
+                    if (object.stat) {
+                        return true;
+                    };
+
+                    Swal.fire({
+                        title: 'Bạn có muốn lưu thay đổi?',
+                        showDenyButton: false,
+                        showCancelButton: true,
+                        confirmButtonText: 'Lưu',
+                        cancelButtonText: `Không lưu`,
+                    }).then((result) => {
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                            /*Swal.fire('Lưu!', '', 'success')*/
+                            object.stat = true;
+                            object.ele = ev;
+                            object.ele.click();
+                        }
+                    });
+                    return false;
+                };
+
+            </script>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Idxe" />
+                <div class="row">
+                    <div class="col-md-6" style="padding-left:50px">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group" style="display: flex; align-items: center;">
+                            <div style="width:170px;">
+                                <strong style="margin-right: 10px;">
+                                    <span>Mã xe:</span>
+                                </strong>
+                            </div>
+                            <input asp-for="Maxe" style="background:#fff; color:#0099ff" class="form-control" readonly />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" style="display: flex; align-items: center;">
+                            <div style="width:170px;">
+                                <strong>
+                                    <label>Tên xe:</label>
+                                </strong>
+                            </div>
+                            <input asp-for="Tenxe" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 py-lg-2" style="padding-left:50px">
+                        <div class="form-group" style="display: flex; align-items: center;">
+                            <div style="width:130px;">
+                                <strong>
+                                    <label>Tên loại xe:</label>
+                                </strong>
+                            </div>
+                            <select asp-for="Idlx" id="sample-select" size="5" placeholder="--Chọn loại xe--">
+                                @if (TempData["Loaixe"] is List<Loaixe> loaixe)
+                                {
+                                    foreach (var product in loaixe)
+                                    {
+                                        <option value="@product.Idlx">
+                                            @product.Tenlx
+                                        </option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 py-lg-2">
+                        <div class="form-group" style="display: flex; margin-top:10px">
+                            <div style="width:170px">
+                                <strong>
+                                    <label class="control-label">Trạng thái:</label>
+                                </strong>
+                            </div>
+                            @{
+                                bool isActive = Model.Active.HasValue ? Model.Active.Value : false;
+                            }
+                            <input style="width:20px; height:20px" type="checkbox" name="Active" value="true" @(isActive ? "checked" : "") />
+                            <input type="hidden" name="Active" value="false" />
+                        </div>
+                    </div>
+
+                    <div class="col-12" style="display:flex">
+                        <div class="col-6 form-group text-right p-2">
+                            <a asp-action="Index" class="btn btn-secondary" style="float:right">&nbsp;Về trang chủ&nbsp;</a>
+                        </div>
+                        <div class="col-6 form-group text-left p-2">
+                            <input type="submit" value="Lưu" class="btn btn-primary" onclick="return ConfirmEdit(this);" />
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+}

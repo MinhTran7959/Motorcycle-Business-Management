@@ -1,0 +1,350 @@
+﻿@model MotorcycleBusinessManagement.Models.Phieuxuat
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="#" class="nav-item nav-link " style="font-size:18px">Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px">Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px">Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item active" style="font-size:18px">Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px">Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px">Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="#" class="nav-item nav-link" style="font-size:18px">Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <div class="container-lg" style="margin-top:30px">
+        <div class="content-page">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Tạo phiếu bán xe
+                                </h5>
+                            </div>
+                            @if (@TempData["AlertSuccessKHMessage"] != null)
+                            {
+
+                                <script>
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: 'Tạo thành công!',
+                                        text: 'Khách hàng có mã @TempData["AlertSuccessKHMessage"] đã được tạo thành công',
+                                        showCloseButton: true,
+                                        confirmButtonText: 'Đóng'
+                                    });
+                                </script>
+
+                            }
+                            <form id="ApplicantForm" asp-action="Create" method="post">
+                                <div class="row mx-1 py-2" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                    @{
+                                        var idset = ViewData["idtd"];
+                                    }
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Mã phiếu bán:</label></b>
+                                            <input asp-for="Sopxk" value="@idset" class="form-control" readonly style="color:#0099ff; background:#fff" />
+                                            <span asp-validation-for="Sopxk" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Ngày bán:</label></b>
+                                            <input type="text" required asp-for="Ngayxuat" class="form-control inputmask1 floating"/>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    // Lấy ngày hiện tại
+                                                    var currentDate = new Date();
+                                                    var day = currentDate.getDate();
+                                                    var month = currentDate.getMonth() + 1; // Tháng bắt đầu từ 0, nên cộng thêm 1
+                                                    var year = currentDate.getFullYear();
+
+                                                    // Định dạng ngày tháng năm
+                                                    var formattedDate = (day < 10 ? "0" : "") + day + "/" + (month < 10 ? "0" : "") + month + "/" + year;
+
+                                                    // Gán dữ liệu ngày hiện tại cho thuộc tính Ngaynhap
+                                                    var ngaynhap = formattedDate;
+
+                                                    // Định dạng input
+                                                    $(".inputmask1").inputmask({
+                                                        alias: "datetime",
+                                                        inputFormat: "dd/mm/yyyy",
+                                                    });
+
+                                                    // Đặt giá trị ngày nhập
+                                                    $(".inputmask1").val(formattedDate);
+                                                });
+
+
+                                            </script>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Số hóa đơn:</label></b>
+                                            <input asp-for="Sohd" class="form-control" />
+                                            <span asp-validation-for="Sohd" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group mt-2">
+                                            <b><label>Ngày hóa đơn</label></b>
+                                            <input asp-for="Ngayhd" class="form-control inputmask2 floating" />
+                                        </div>
+                                    </div>
+                                    <script>
+                                        $(document).ready(function () {
+                                            $(".inputmask2").inputmask({
+                                                alias: "datetime",
+                                                inputFormat: "dd/mm/yyyy",
+                                            });
+                                        });
+                                    </script>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group  mt-2">
+                                            <b>
+                                                <a href="@Url.Action("CreateKH","Phieuxuats")" title="Thêm khách hàng"
+                                                    style="text-decoration:none;">
+                                                    Thông tin khách hàng (*):
+                                                </a>
+                                            </b>
+                                            <select asp-for="Idkh" id="sample-select" size="5" 
+                                                    placeholder="--Chọn khách hàng--" required
+                                                    class="py-2">
+                                                @if (TempData["Khachhang"] is List<Khachhang> khachHang)
+                                                {
+                                                    foreach (var product in khachHang)
+                                                    {
+                                                        <option value="@product.Idkh">
+                                                            @product.Tenkh - @product.Diachikh - @product.Dienthoaikh
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group  mt-2">
+                                            <b><label>Thông tin nhân viên bán:</label></b>
+                                            <select asp-for="Idnv" id="sample-select" size="5" placeholder="--Chọn nhân viên--" required>
+                                                @if (TempData["Nhanvien"] is List<Nhanvien> nhanVien)
+                                                {
+                                                    foreach (var employee in nhanVien)
+                                                    {
+                                                        <option value="@employee.Idnv">
+                                                            @employee.Manv - @employee.Tennv - @employee.Diachinv
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px; margin-top:15px">
+                                    <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                        Chọn xe muốn bán
+                                    </h5>
+                                </div>
+                                <div class="container-lg py-3" style="margin-bottom:10px; border: 4px solid #DBC4F0; border-radius:10px;">
+                                    <table id="ExpTable" class="table custom-table">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>
+                                                    Thông tin xe
+                                                </th>
+                                                <th>
+                                                    Đời
+                                                </th>
+                                                <th>
+                                                    Số khung
+                                                </th>
+                                                <th>
+                                                    Số máy
+                                                </th>
+                                                <th>
+                                                    Giá
+                                                </th>
+                                                <th>
+                                                    Biển số lúc bán
+                                                </th>
+                                                <th>
+                                                    <button type="button" class="btn btn-sm btn-success btn-outline-success visible"
+                                                            onclick="AddItem(this)">
+                                                        <i class="fas fa-plus text-white"></i>
+                                                    </button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                @for (int i = 0; i < Model.Chitietxes.Count; i++)
+                                                {
+                                                    <tr>
+
+                                                        <td>
+                                                            <select id="Idct-@i" asp-for="@Model.Chitietxes[i].Idct" class="form-control idct-dropdown" onchange="checkDuplicateIdct(this.value, this)">
+                                                                <option disabled selected value="">--Chọn xe để bán--</option>
+                                                                @if (TempData["Xe"] is List<Chitietxe> xe)
+                                                                {
+                                                                    foreach (var tenxe in xe)
+                                                                    {
+                                                                        <option value="@tenxe.Idct"
+                                                                        data-sokhung="@tenxe.Sokhung" data-somay="@tenxe.Somay" data-giaban="@tenxe.Giaban" data-biensolucban="@tenxe.Biensolucban" data-gianhap="@tenxe.Gianhap"
+                                                                        data-idpnk="@tenxe.Idpnk" data-idxe="@tenxe.Idxe" data-idmx="@tenxe.Idmx" data-trangthai="@tenxe.Trangthai"
+                                                                        data-biensolucmua="@tenxe.Biensolucmua" data-thoigianbaohanh="@tenxe.Thoigianbaohanh"
+                                                                        data-doixe="@tenxe.Doixe">
+                                                                            @tenxe.IdpnkNavigation.Mapnk @tenxe.IdxeNavigation.Tenxe @tenxe.IdmxNavigation.Tenmx
+                                                                        </option>
+                                                                    }
+                                                                }
+                                                            </select>
+                                                        </td>
+                                                        <input id="ixacnhan-@i" asp-for="@Model.Chitietxes[i].Active" value="true" type="hidden" class="form-control" />
+
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Idpnk" type="hidden" class="Idpnk form-control" readonly />
+                                                        </td>
+                                                        <td style ="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Idxe" type="hidden" class="Idxe form-control" readonly />
+                                                        </td>
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Idmx" type="hidden" class="Idmx form-control" readonly />
+                                                        </td>
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Gianhap" type="hidden" class="Gianhap form-control" readonly />
+                                                        </td>
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Trangthai" type="hidden" class="Trangthai form-control" readonly />
+                                                        </td>
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Biensolucmua" type="hidden" class="Biensolucmua form-control" readonly />
+                                                        </td>
+                                                        <td style="display:none">
+                                                            <input asp-for="@Model.Chitietxes[i].Thoigianbaohanh" type="hidden" class="Thoigianbaohanh form-control" readonly />
+                                                        </td>
+                                                        <td>
+                                                            <input asp-for="@Model.Chitietxes[i].Doixe" class="Doixe form-control" readonly style="background:#fff" />
+                                                        </td>
+                                                        <td>
+                                                            <input asp-for="@Model.Chitietxes[i].Sokhung" class="Sokhung form-control" readonly style="background:#fff" />
+                                                        </td>
+                                                        <td>
+                                                            <input asp-for="@Model.Chitietxes[i].Somay" class="Somay form-control" readonly style="background:#fff" />
+                                                        </td>
+                                                        <td>
+                                                            <input oninput="formatCurrencyAndTotal(this);Kiemtradongia(this);"
+                                                            id="Giaban-@i" asp-for="@Model.Chitietxes[i].Giaban"
+                                                            class="Giaban form-control" asp-format="{0:N0}"
+                                                            style="background:#fff; text-align:right"/>
+                                                        </td>
+                                                        <td>
+                                                            <input asp-for="@Model.Chitietxes[i].Biensolucban" class="Biensolucmua form-control" />
+                                                        </td>
+
+                                                        <td>
+                                                            <button id="btnremove-@i" type="button" class="btn btn-sm btn-danger btn-outline-danger visible"
+                                                            onclick="DeleteItem(this)">
+                                                                <i class="fas fa-trash text-white"></i>
+                                                            </button>
+                                                        </td>
+
+                                                    </tr>
+                                                }
+                                        </tbody>
+                                        
+
+                                    </table>
+                                </div>
+                                
+                                <div class="table-responsive">
+                                    <table class="table custom-table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="col-8 py-3"
+                                                    style="text-align: right; font-weight: bold; padding-top:5px">
+                                                    <i class="fas fa-dollar-sign" style="color:#00cc7a"></i> Tổng tiền
+                                                </td>
+                                                <td class="col-4">
+                                                    <input asp-for="Tongtienxuat" class="form-control-plaintext" id="itongtienhang"
+                                                           readonly type="text">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-12 btn-group">
+                                    <div class="col-6 form-group text-right p-2">
+                                        <a asp-action="Index" class="btn btn-secondary" style="float: right;">&nbsp;Quay về&nbsp;</a>
+                                    </div>
+                                    <div class="col-6 form-group text-left p-2">
+                                        <button type="submit" class="btnSubmit btn btn-primary">Bán</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/phieuxuatkho.js"></script>
+}

@@ -1,0 +1,561 @@
+﻿@model IEnumerable<MotorcycleBusinessManagement.Models.Phieuxuat>
+
+@{
+    ViewData["Title"] = "Index";
+Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+
+<style media="(max-width: 576px)">
+    .table-responsive td,
+    .table-responsive th {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .table-responsive tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .table-responsive th {
+        flex-basis: 10%;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .table-responsive td {
+        flex-basis: 90%;
+        padding: 0.75rem 2rem;
+    }
+</style>
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="#" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <img src="~/image/xe.png" style="display: inline-block; width: 8%; height: 10%; float: left;" />
+    <img src="~/image/xe2.png" style="display: inline-block; width: 8%; height: 10%; float: right;transform: translateY(20%)" />
+    <div class="container-lg">
+        <ul class="nav nav-pills" id="mytab" role="tablist" style="background-color:#fff; margin-top:30px">
+            <li class="nav-item" role="presentation" style="width:50%">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="width:100%">
+                    <i class="fa fa-list-alt"></i> Danh sách phiếu bán xe
+                </button>
+            </li>
+            <li class="nav-item" role="presentation" style="width:50%">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="width:100%">
+                    <i class="fa fa-eye-slash"></i> Danh sách xe đã bán
+                </button>
+            </li>
+        </ul>
+
+        @if (@TempData["AlertSuccessMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: 'Mã @TempData["AlertSuccessMessage"] đã được tạo thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertUpdateMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: 'Mã @TempData["AlertUpdateMessage"] đã được xóa thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertDeleteMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Tạo thành công!',
+                    text: 'Mã @TempData["AlertDeleteMessage"] đã được xóa thành công',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertpxkMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không tìm thấy!',
+                    text: '@TempData["AlertpxkMessage"] không có dữ liệu',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertxedabanMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không tìm thấy!',
+                    text: '@TempData["AlertxedabanMessage"] không có dữ liệu',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        @if (@TempData["AlertErrorMessage"] != null)
+        {
+
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Không có dữ liệu!',
+                    text: '@TempData["AlertErrorMessage"] không thể thêm được!!!',
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng'
+                });
+            </script>
+
+        }
+        <div class="tab-content" id="mytabcontent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <form method="post">
+                    <div style="display:flex;margin-top:30px">
+                        <div>
+                            <input style="height:40px; width:300px;border-radius: 20px 0px 0px 20px;" type="search" name="searchString" placeholder="Tìm kiếm...">
+                            <button type="submit" class="search-btn"><i class='fas fa-search'></i></button>
+                        </div>
+                        <style>
+                            .search-btn {
+                                color: #9ca3af;
+                                height: 40px;
+                                width: 40px;
+                                background: #9fc2fd;
+                                border-radius: 0px 20px 20px 0px;
+                            }
+                        </style>
+                        <div style="margin-left:30px;display: flex">
+                            <div style="display: flex">
+                                <label class="col-form-label" style="width:120px">Từ ngày:</label>
+                                <input type="date" name="fromDate" class="form-control" />
+                            </div>
+                            <div style="display: flex; margin-left:20px">
+                                <label class="col-form-label" style="width:120px">Đến ngày:</label>
+                                <input type="date" name="toDate" class="form-control" />
+                            </div>
+                            <button style="margin-left:20px" type="submit" class="btn btn-primary">Lọc</button>
+                        </div>
+                        
+                        <div style="margin-left: 20px;
+                            border-radius: 20px;
+                            height: 40px;
+                            font-size: 20px;
+                            border: 2px;
+                            background: white;
+                            width: 150px;
+                            text-align: center;
+                            padding-top: 5px;
+                            box-shadow: rgba(44, 187, 99, .2) 0 -5px 18px">
+                            <a href="@Url.Action("ExportExcelPX", "Phieuxuats")" class="btn-download" style="text-decoration:none;color: #15b72a;">
+                                <i class='fa fa-file-excel'></i>
+                                <span class="text">Xuất Excel</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="display:flex;margin-top:30px; margin-left:20%">
+                        <div style="display: flex">
+                            <label class="col-form-label" style="min-width:120px;">Tên khách hàng:</label>
+                            <select id="sample-select" size="5" name="selectkh"
+                                    placeholder="--Chọn khách hàng--"
+                                    class="py-2">
+                                @if (TempData["Khachhang"] is List<Khachhang> khachHang)
+                                {
+                                    <option value="">Không chọn</option>
+                                    foreach (var product in khachHang)
+                                    {
+                                        <option value="@product.Idkh">
+                                            @product.Tenkh - @product.Diachikh
+                                        </option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        
+                        <div style="display: flex; margin-left:30px">
+                            <label class="col-form-label" style="width:130px; ">Chọn hành động:</label>
+                            <select name="trangthai" style="width:200px;height:38px; margin-top:6px;">
+                                <option value="">Không chọn</option>
+                                <option value="False">Chưa thu</option>
+                                <option value="True">Đã Thu</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                </form>
+                <div id="contain_table">
+                    <div class="container-md" style="margin-top:18px; margin-bottom:10px; ">
+                        <div class="page-header">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Danh sách phiếu bán xe
+                                </h5>
+                            </div>
+
+                            <div style="float:right; width:30px; height:30px;">
+                                <a href="@Url.Action("Create","Phieuxuats")" title="Thêm phiếu nhập"
+                                   class="btn btn-sm btn-outline-success hover-effect">
+                                    <i class='fas fa-plus fa-spin'></i>
+                                </a>
+                                <style>
+                                    .hover-effect {
+                                        background-color: #DBC4F0;
+                                        border-radius: 10px;
+                                        padding: 10px 15px;
+                                        transform: translateY(-25px) translateX(-10px);
+                                        transition: transform 0.2s ease, box-shadow 0.2s ease;
+                                    }
+
+                                        .hover-effect:hover {
+                                            transform: translateY(-35px) translateX(-10px); /* Di chuyển nút lên cao một chút */
+                                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Hiển thị bóng đổ */
+                                        }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom:10px">
+                        <table id="example8" class="table  table-hover table-responsive table-responsive-xl">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th style="width:120px">
+                                        Mã phiếu bán
+                                    </th>
+                                    <th style="width:120px">
+                                        Ngày bán
+                                    </th>
+                                    <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th style="width:160px">
+                                        Tên nhân viên bán
+                                    </th>
+                                    <th>Số tiền</th>
+                                    <th>
+                                        Thu tiền
+                                    </th>
+                                    <th style="width:120px"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int count = 1;
+                                }
+                                @foreach (Phieuxuat item in ViewBag.phieuBanXe)
+                                {
+                                <tr>
+                                    
+                                    <td id="td_right">@count</td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Sopxk)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ngayxuat)
+                                    </td>
+                                    
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IdkhNavigation.Tenkh)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.IdnvNavigation.Tennv)
+                                    </td>
+                                    <td style="text-align: right">
+                                        @Html.DisplayFor(modelItem => item.Tongtienxuat)
+                                    </td>
+                                        @if (item.Dathu == true)
+                                        {
+                                            <td style="color:lightgreen">
+                                                Đã thu
+                                            </td>
+                                        }
+                                        else if (item.Dathu == false)
+                                        {
+                                            <td style="color:orangered">
+                                                Chưa thu
+                                            </td>
+                                        }
+                                        
+                                    <td id="td_center" style="width:auto">
+                                        <a asp-action="Edit" asp-route-id="@item.Idpxk" class="btn btn-primary btn-sm mb-1" title="Cập nhật phiếu nhập">
+                                            <i class="fas fa-pen text-white"></i>
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.Idpxk" class="btn btn-info btn-sm mb-1" title="Chi tiết phiếu nhập">
+                                            <i class="fas fa-info-circle text-white"></i>
+                                        </a>
+
+                                        <a asp-action="Delete" asp-route-id="@item.Idpxk" class="btn btn-danger btn-sm mb-1" title="Xóa tài khoản" onclick="return ConfirmDelete(this);">
+                                            <i class="fas fa-trash text-white"></i>
+                                        </a>
+                                    </td>
+                                    @{
+                                        count++;
+                                    }
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table custom-table">
+                            <tbody>
+
+                                <tr>
+                                    <td class="col-8 py-3"
+                                        style="text-align: right; font-weight: bold; padding-top:5px">
+                                        <i class="fas fa-dollar-sign" style="color:#00cc7a;"></i> Tổng tiền
+                                    </td>
+                                    @* <td class="col-4">
+                                        <input oninput="formatTongTien(this)" value="@ViewBag.tongTienXuat" class="tongTien form-control-plaintext"
+                                               readonly type="text">
+                                    </td> *@
+                                    <td class="col-4">
+                                        <input class="tongTien form-control-plaintext" readonly type="text">
+                                    </td>
+
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            function formatNumber(number) {
+                                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            }
+
+                            // Load dữ liệu và đặt giá trị cho input
+                            document.addEventListener("DOMContentLoaded", function () {
+                                var tongTienXuat = @Json.Serialize(ViewBag.tongTienXuat);
+                                var formattedTongTien = formatNumber(tongTienXuat);
+
+                                // Đặt giá trị cho input
+                                document.querySelector('.tongTien').value = formattedTongTien;
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="home-tab">
+                <form method="post">
+                    <div style="display:flex;margin-top:30px">
+                        <div>
+                            <input style="height:40px; width:300px;border-radius: 20px 0px 0px 20px;" type="search" name="searchString" placeholder="Tìm kiếm...">
+                            <button type="submit" class="search-btn"><i class='fas fa-search'></i></button>
+                        </div>
+                        <style>
+                            .search-btn {
+                                color: #9ca3af;
+                                height: 40px;
+                                width: 40px;
+                                background: #9fc2fd;
+                                border-radius: 0px 20px 20px 0px;
+                            }
+                        </style>
+                        <div style="margin-left:30px;display: flex">
+                            <div style="display: flex">
+                                <label class="col-form-label" style="width:120px">Từ ngày:</label>
+                                <input type="date" name="fromDate" class="form-control" />
+                            </div>
+                            <div style="display: flex; margin-left:20px">
+                                <label class="col-form-label" style="width:120px">Đến ngày:</label>
+                                <input type="date" name="toDate" class="form-control" />
+                            </div>
+                            <button style="margin-left:20px" type="submit" class="btn btn-primary">Lọc</button>
+                        </div>
+                        
+                        <div style="margin-left: 20px;
+                            border-radius: 20px;
+                            height: 40px;
+                            font-size: 20px;
+                            border: 2px;
+                            background: white;
+                            width: 150px;
+                            text-align: center;
+                            padding-top: 5px;
+                            box-shadow: rgba(44, 187, 99, .2) 0 -5px 18px">
+                            <a href="@Url.Action("ExportExcel", "Phieuxuats")" class="btn-download" style="text-decoration:none;color: #15b72a;">
+                                <i class='fa fa-file-excel'></i>
+                                <span class="text">Xuất Excel</span>
+                            </a>
+                        </div>
+                    </div>
+                </form>
+                <div id="contain_table">
+                    <div class="container-md" style="margin-top:18px; margin-bottom:10px; ">
+                        <div class="page-header">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Danh sách xe đã bán
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom:10px">
+                        <table id="example9" class="table table-hover table-responsive table-responsive-xl">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>
+                                        Mã phiếu nhập
+                                    </th>
+                                    <th>
+                                        Tên xe
+                                    </th>
+                                    <th>
+                                        Màu
+                                    </th>
+                                    <th>
+                                        Đời
+                                    </th>
+                                    <th>Số khung</th>
+                                    <th>Số máy</th>
+                                    <th>
+                                        Bs lúc bán
+                                    </th>
+                                    <th>
+                                        Giá bán
+                                    </th>
+                                    @* <th style="width:30px"></th> *@
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int count2 = 1;
+                                }
+                                @foreach (Chitietxe item in ViewBag.xeDaBan)
+                                {
+                                    <tr>
+                                        <td id="td_right">@count2</td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdpnkNavigation.Mapnk)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdxeNavigation.Tenxe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdmxNavigation.Tenmx)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Doixe)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Sokhung)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Somay)
+                                        </td>
+                                        <td>
+                                            @(item.Biensolucban != null ? item.Biensolucban : "Không có")
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Gianhap)
+                                        </td>
+                                        @* <td id="td_center" style="width:auto">
+
+                                            <button onclick="showModalEdit(this)" type="button" class="btn btn-primary btn-sm mb-1" data-toggle="modal"
+                                                    data-target="#editModal">
+                                                <i class="fas fa-pen text-white"></i>
+                                            </button>
+                                            <button onclick="showModalDetail(this)" type="button" class="btn btn-info btn-sm mb-1" data-toggle="modal"
+                                                    data-target="#detailModal">
+                                                <i class="fas fa-info-circle text-white"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger deleteBtn btn-sm mb-1"
+                                                    data-toggle="modal" data-target="#deleteModal">
+                                                <i class="fas fa-trash text-white"></i>
+                                            </button>
+                                        </td> *@
+                                        @{
+                                            count2++;
+                                        }
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,442 @@
+﻿@* @model IEnumerable<MotorcycleBusinessManagement.Models.Loaixe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Malx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tenlx)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Malx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenlx)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idlx">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idlx">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idlx">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+ *@
+@model IEnumerable<MotorcycleBusinessManagement.Models.Loaixe>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<div class="d-flex justify-content-between mb-2">
+
+    <div class="d-flex justify-content-between ">
+        <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#addModal">
+            Thêm mới nhóm hàng
+        </button>
+        <form asp-controller="Nhomhh" asp-action="TrashList">
+            <button type="submit" class="btn btn-info">
+                <i class="fas fa-trash-restore"></i>
+            </button>
+        </form>
+
+    </div>
+</div>
+<div class="table-responsive">
+
+    <table class="table table-striped table-bordered" id="productTable">
+        <thead>
+            <tr>
+                <th class="text-center">STT</th>
+                <th>Mã nhóm hàng</th>
+                <th>Tên nhóm hàng</th>
+                <th class="d-none"></th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int count = 1;
+            }
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td class="d-flex justify-content-center">@count</td>
+                    <td>@item.Malx</td>
+                    <td>@item.Tenlx</td>
+                    <td class=d-none>@item.Idlx</td>
+
+
+                    <td>
+                        <button onclick="showModalEdit(this)" type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#editModal">
+                            <i class="fas fa-pen text-white"></i>
+                        </button>
+                        <button onclick="showModalDetail(this)" type="button" class="btn btn-info" data-toggle="modal"
+                                data-target="#detailModal">
+                            <i class="fas fa-info-circle text-white"></i>
+                        </button>
+                        <button data-id="@item.Idlx" data-code="@item.Malx" data-name="@item.Tenlx" type="button" class="btn btn-danger deleteBtn"
+                                data-toggle="modal" data-target="#deleteModal">
+                            <i class="fas fa-trash text-white"></i>
+                        </button>
+                    </td>
+                    @{
+                        count++;
+                    }
+                </tr>
+
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog w-90" role="document" style="display: flex;
+        align-items: center;
+        justify-content: center;">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Thêm mới nhóm hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formAdd" asp-controller="Accounts" asp-action="Create" method="post">
+
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Mã nhóm hàng
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input id="ManhhA" name="Manhh" maxlength="255" type="text"
+                                           class="form-control">
+                                    @*<span id="ManhhCA" class="text-danger"></span>*@
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Tên nhóm hàng
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input id="TennhhA" name="Tennhh" maxlength="255" required
+                                           type="text" class="form-control">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" id="addButton" disabled class="btn btn-primary">Lưu</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog w-90" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModal">Cập nhật thông tin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="formEdit" asp-controller="Nhomhh" asp-action="Edit" method="post">
+
+                <div class="modal-body">
+                    <input id="id" name="Idnhh" class="d-none" type="text">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Mã nhóm hàng
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input id="ManhhE" name="Manhh" maxlength="255" type="text"
+                                           class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 mt-2">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-md-2 col-sm-12">
+                                    Tên nhóm hàng
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <input id="TennhhE" name="Tennhh" maxlength="255" required
+                                           type="text" class="form-control">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" id="editButton" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModal"
+     aria-hidden="true">
+    <div class="modal-dialog w-90" role="document" style="display: flex;
+        align-items: center;
+        justify-content: center;">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModal">Thông tin chi tiết</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-2 col-sm-12">
+                                Mã nhóm hàng
+                            </div>
+                            <div class="col-md-10 col-sm-12">
+                                <input id="ManhhD" name="Manhh" maxlength="255" type="text"
+                                       class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 mt-2">
+                        <div class="row d-flex align-items-center">
+                            <div class="col-md-2 col-sm-12">
+                                Tên nhóm hàng
+                            </div>
+                            <div class="col-md-10 col-sm-12">
+                                <input id="TennhhD" name="Tennv" maxlength="255" required
+                                       type="text" class="form-control" disabled>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModal">Bạn có chắc chắn muốn xóa?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form asp-controller="Accounts" asp-action="Delete" method="post">
+                <input id="idD" name="id" class="d-none" type="text">
+
+                <div class="modal-body">
+                    Dòng dữ liệu này sẽ bị mất, bạn có muốn tiếp tục xóa?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" id="deleteModalBtn" class="btn btn-primary">Xóa</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const formAdd = document.getElementById("formAdd");
+    const addButton = document.getElementById("addButton");
+
+    const formEdit = document.getElementById("formEdit");
+    const editButton = document.getElementById("editButton");
+
+    formAdd.addEventListener('change', function () {
+        if (formAdd.checkValidity()) {
+            addButton.disabled = false;
+        } else {
+            addButton.disabled = true;
+        }
+    });
+    formEdit.addEventListener('change', function () {
+        if (formEdit.checkValidity()) {
+            editButton.disabled = false;
+        } else {
+            editButton.disabled = true;
+        }
+    });
+</script>
+
+<script>
+    function validateForm(form, saveButton) {
+        // Lặp qua tất cả các trường input, textarea và select của form
+        let formIsValid = true;
+        const fields = form.querySelectorAll("input, textarea, select");
+        let currentFieldIsValid = true;
+        fields.forEach((field) => {
+            if (field === event.target) {
+                currentFieldIsValid = field.checkValidity();
+            }
+
+            if (!currentFieldIsValid || !field.checkValidity()) {
+                // Nếu trường Trường dữ liệu bắt buộc!, đánh dấu form Trường dữ liệu bắt buộc! và hiển thị lỗi
+                formIsValid = false;
+                field.classList.add("is-invalid");
+                field.setAttribute('placeholder', 'Trường dữ liệu bắt buộc!!');
+                field.style.color = "red";
+            } else {
+                field.classList.remove("is-invalid");
+                field.setAttribute('placeholder', '');
+                field.style.color = "black";
+            }
+        });
+
+        // Enable hoặc disable nút lưu dữ liệu tùy thuộc vào trạng thái hợp lệ của form
+        saveButton.disabled = !formIsValid;
+    }
+
+    // Lấy tham chiếu tới form và nút lưu dữ liệu từ DOM
+
+
+    // Đăng ký sự kiện "change" cho các trường input, textarea và select của form
+    formAdd.addEventListener("change", () => {
+        validateForm(formAdd, addButton);
+    });
+
+    formEdit.addEventListener("change", () => {
+        validateForm(formEdit, editButton);
+    });
+</script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    function showModalDetail(row) {
+        // Trích xuất thông tin từ các ô trong dòng được click
+        const cells = row.parentElement.parentElement.cells;
+        const ma = cells[1].textContent;
+        const ten = cells[2].textContent;
+
+        // Gán giá trị cho các input trong modal
+        document.querySelector('#ManhhD').value = ma;
+        document.querySelector('#TennhhD').value = ten;
+
+
+        // Hiển thị modal
+        $('#detailModal').modal('show');
+    }
+    function showModalEdit(row) {
+        // Trích xuất thông tin từ các ô trong dòng được click
+        const cells = row.parentElement.parentElement.cells;
+        const ma = cells[1].textContent;
+        const ten = cells[2].textContent;
+        const id = cells[3].textContent;
+
+        // Gán giá trị cho các input trong modal
+        document.querySelector('#ManhhE').value = ma;
+        document.querySelector('#TennhhE').value = ten;
+        document.querySelector('#id').value = id;
+
+        // Hiển thị modal
+        $('#editModal').modal('show');
+    }
+
+    //Khi nhấn xóa trên table
+    $('#deleteModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Nút "Xóa" được nhấn
+        var id = button.data('id'); // Lấy giá trị id được lưu trong data-id của nút "Xóa"
+        var name = button.data('name'); // Lấy giá trị của cột tên được lưu trong data-name của nút "Xóa"
+        var code = button.data('code');
+        // Tiếp tục với các cột còn lại
+        document.getElementById("idD").value = id;
+        // Hiển thị thông tin của dòng lên modal xác nhận
+        var modal = $(this);
+        modal.find('.modal-body').text('Bạn có chắc chắn muốn xóa dòng có mã là ' + code + ' và tên là ' + name);
+    });
+
+
+                //$('#deleteModalBtn').on('click', function () {
+                //    var id = $(this).data('id'); // Lấy giá trị id được lưu trong data-id của nút "Xóa"
+                //    // Gửi yêu cầu xóa đến server với id được lấy ở trên
+                //    $.ajax({
+                //        url: '/delete',
+                //        type: 'POST',
+                //        data: { id: id },
+                //        success: function (data) {
+                //            // Nếu xóa thành công, ẩn dòng vừa xóa
+                //            $('table tr[data-id="' + id + '"]').fadeOut(500, function () {
+                //                $(this).remove();
+                //            });
+                //        },
+                //        error: function () {
+                //            alert('Đã xảy ra lỗi khi xóa!');
+                //        }
+                //    });
+                //});
+</script>

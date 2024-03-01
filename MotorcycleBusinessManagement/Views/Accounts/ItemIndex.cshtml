@@ -1,0 +1,145 @@
+﻿@model IEnumerable<MotorcycleBusinessManagement.Models.Account>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+}
+@section Section1{
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <h5 class="text-uppercase mb-0 mt-0 page-title">Thêm tài khoản</h5>
+            </div>
+        </div>
+    </div>
+    
+}
+
+@section Section4{
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                <h5 class="text-uppercase mb-0 mt-0 page-title">Danh sách tài khoản</h5>
+            </div>
+        </div>
+    </div>
+}
+@section Section2{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+
+                    <td class="text-right">
+                        <a asp-action="Edit" asp-route-id="@item.Idacc"
+                           class="btn btn-primary btn-sm mb-1">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Idacc"
+                           class="btn btn-info btn-sm mb-1">
+                            <i class="far fa-file-alt"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Idacc"
+                           class="btn btn-danger btn-sm mb-1">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@section Section3{
+    <form id="createAccountForm" asp-action="Create" method="post">
+        <div class="row filter-row">
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <input type="text" name="Username" class="form-control floating" />
+                    <label class="focus-label">Tài khoản</label>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <input type="text" name="Password" class="form-control floating" />
+                    <label class="focus-label">Mật khẩu</label>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <input type="text" name="Phone" class="form-control floating" />
+                    <label class="focus-label">Số điện thoại</label>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="form-group form-focus">
+                    <input type="text" name="Email" class="form-control floating" />
+                    <label class="focus-label">Email</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-12"></div>
+            <div class="col-sm-8 col-12 text-right add-btn-col">
+                @* <a href="add-teacher.html"
+            class="btn btn-primary float-right btn-rounded"><i class="fas fa-plus"></i> Add Teacher</a> *@
+                <button type="submit" class="btn btn-primary float-right btn-rounded">
+                    <i class="fas fa-plus"></i> Thêm tài khoản
+                </button>
+
+                <div class="view-icons">
+                    <a href="all-teachers.html" class="grid-view btn btn-link">
+                        <i class="fas fa-th"></i>
+                    </a>
+                    <a href="teachers-list.html"
+                       class="list-view btn btn-link active">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+}
+

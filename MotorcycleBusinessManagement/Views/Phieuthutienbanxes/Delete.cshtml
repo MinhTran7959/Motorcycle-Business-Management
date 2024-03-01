@@ -1,0 +1,286 @@
+﻿@model MotorcycleBusinessManagement.Models.Phieuthutienbanxe
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <div class="container-lg" style="margin-top:30px">
+        <div class="content-page">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Xóa phiếu thu tiền
+                                </h5>
+                            </div>
+                            <script>
+                                var object = { stat: false, ele: null };
+                                function ConfirmDelete(ev) {
+                                    if (object.stat) {
+                                        return true;
+                                    };
+
+                                    Swal.fire({
+                                        title: 'Bạn có muốn xóa phiếu nhập kho này?',
+                                        showDenyButton: false,
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Xóa',
+                                        cancelButtonText: `Hủy`,
+                                    }).then((result) => {
+                                        /* Read more about isConfirmed, isDenied below */
+                                        if (result.isConfirmed) {
+                                            /*Swal.fire('Lưu!', '', 'success')*/
+                                            object.stat = true;
+                                            object.ele = ev;
+                                            object.ele.click();
+                                        }
+                                    });
+
+                                    return false;
+                                };
+
+                            </script>
+                            <form id="ApplicantForm" asp-action="Delete" method="post">
+                                <div class="row mx-1 py-2" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                    <input type="hidden" asp-for="Idpt" />
+                                    <div class="col-sm-5 col-md-3">
+                                        <div class="form-group">
+                                            <b><label>Mã phiếu thu: </label></b>
+                                            <input asp-for="Sopt" class="form-control" readonly style="color:#0099ff; background:#fff" />
+                                            <span asp-validation-for="Sopt" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-3">
+                                        <div class="form-group">
+                                            <b><label>Ngày thu:</label></b>
+                                            <input required asp-for="Ngaythu" class="form-control floating" readonly style="background:#fff" />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-md-3">
+                                        <div class="form-group">
+                                            <b><label>Nhân viên thu:</label></b>
+                                            <select asp-for="Idnv" id="sample-select" size="5" disabled placeholder="--Chọn nhân viên--" required style="background:#fff">
+                                                @if (TempData["Nhanvien"] is List<Nhanvien> nhanVien)
+                                                {
+                                                    foreach (var product in nhanVien)
+                                                    {
+                                                        <option value="@product.Idnv">
+                                                            @product.Manv - @product.Tennv
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-md-3">
+                                        <div class="form-group">
+                                            <b><label>Hình thức thu:</label></b>
+                                            <select asp-for="Idhttt" id="sample-select" size="5" placeholder="--Chọn nhân viên--" required disabled style="background:#fff">
+                                                @if (TempData["httt"] is List<Httt> httt)
+                                                {
+                                                    foreach (var employee in httt)
+                                                    {
+                                                        <option value="@employee.Idhttt">
+                                                            @employee.Tenhttt
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px; margin-top:15px">
+                                    <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                        Xóa nội dung thu
+                                    </h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="table-responsive" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                            <table id="ExpTable" class="table custom-table">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Phiếu bán</th>
+                                                        <th>Ngày bán</th>
+                                                        <th>Khách hàng mua</th>
+                                                        <th>Địa chỉ</th>
+                                                        <th>Điện thoại</th>
+                                                        <th>Nhân viên bán</th>
+                                                        <th>Tổng tiền bán</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    @for (int i = 0; i < Model.Phieuxuats.Count; i++)
+                                                    {
+                                                        <tr>
+
+                                                            <td>
+                                                                <select disabled asp-for="@Model.Phieuxuats[i].Idpxk" style="background-color:#fff" class="idpxk-dropdown form-control" required>
+                                                                    <option disabled selected value="">--Chọn phiếu bán xe muốn chi--</option>
+                                                                    @if (TempData["Px"] is List<Phieuxuat> pxk)
+                                                                    {
+                                                                        foreach (var phieuxuat in pxk)
+                                                                        {
+                                                                            <option value="@phieuxuat.Idpxk"
+                                                                                    data-sohd="@phieuxuat.Sohd" data-ngayhd="@phieuxuat.Ngayhd" data-tenkh="@phieuxuat.IdkhNavigation.Tenkh"
+                                                                                    data-tennv="@phieuxuat.IdnvNavigation.Tennv" data-tongtien="@phieuxuat.Tongtienxuat"
+                                                                                    data-ngayxuat="@phieuxuat.Ngayxuat" data-sopxk="@phieuxuat.Sopxk"
+                                                                                    data-idkh="@phieuxuat.Idkh" data-idnv="@phieuxuat.Idnv">
+                                                                                @phieuxuat.Sopxk
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+
+
+                                                            <input id="ixacnhan-@i" asp-for="@Model.Phieuxuats[i].Active" value="true" type="hidden" class="form-control" />
+                                                            <td style="display:none">
+                                                                <input asp-for="@Model.Phieuxuats[i].Sopxk" class="Sopxk form-control" />
+                                                            </td>
+                                                            <td style="display:none">
+                                                                <input asp-for="@Model.Phieuxuats[i].Sohd" class="Sohd form-control" />
+                                                            </td>
+                                                            <td style="display:none">
+                                                                <input asp-for="@Model.Phieuxuats[i].Ngayhd" class="Ngayhd form-control" />
+                                                            </td>
+                                                            <td style="display:none">
+                                                                <input asp-for="@Model.Phieuxuats[i].Idkh" class="Idkh form-control" />
+                                                            </td>
+                                                            <td style="display:none">
+                                                                <input asp-for="@Model.Phieuxuats[i].Idnv" class="Idnv form-control" />
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Phieuxuats[i].Ngayxuat" required class="Ngayxuat form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Phieuxuats[i].Ngayxuat" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Phieuxuats[i].IdkhNavigation.Tenkh" class="Tenkh form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Phieuxuats[i].Idkh" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Phieuxuats[i].IdkhNavigation.Diachikh" class="Tenkh form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Phieuxuats[i].Idkh" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Phieuxuats[i].IdkhNavigation.Dienthoaikh" class="Tenkh form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Phieuxuats[i].Idkh" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Phieuxuats[i].IdnvNavigation.Tennv" class="Tennv form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Phieuxuats[i].Idnv" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input oninput="formatCurrencyAndTotal(this);" id="Tongtienxuat-@i" asp-for="@Model.Phieuxuats[i].Tongtienxuat" asp-format="{0:N0}" class="Tongtienxuat form-control" readonly style="background:#fff; text-align:right" />
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="col-8 py-3"
+                                                            style="text-align: right; font-weight: bold; padding-top:5px">
+                                                            <i class="fas fa-dollar-sign" style="color:#00cc7a"></i> Tổng tiền
+                                                        </td>
+                                                        <td class="col-4">
+                                                            <input class="form-control-plaintext" asp-format="{0:N0}" id="itongtienhang"
+                                                                   asp-for="Tongtienthu" readonly type="text">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 btn-group">
+                                    <div class="col-6 form-group text-right p-2">
+                                        <a asp-action="Index" class="btn btn-secondary" style="float: right;">&nbsp;Quay về&nbsp;</a>
+                                    </div>
+                                    <div class="col-6 form-group text-left p-2">
+                                        <input type="submit" value="Xóa" class="btn btn-danger" onclick="return ConfirmDelete(this);" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/js/phieuthutien.js"></script>
+
+}

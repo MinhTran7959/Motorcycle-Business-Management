@@ -1,0 +1,359 @@
+﻿@model MotorcycleBusinessManagement.Models.Phieuxuat
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/List_Index_Layout.cshtml";
+    CarSalesContext _context = new CarSalesContext();
+    Account acc = _context.Accounts.Find(Int32.Parse(User.Identity.Name));
+}
+
+@section Section1{
+    <div class="navbar-nav  p-4 p-lg-0">
+        <a href="@Url.Action("Trangchu", "Chitietxes")" class="nav-item nav-link " style="font-size:18px"><i class="fas fa-home"></i> Trang chủ</a>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-list"></i> Danh mục</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Nhacungcaps")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhà cung cấp</a>
+                <a href="@Url.Action("Index", "Khachhangs")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Khách hàng</a>
+                @if (User.IsInRole("Admin"))
+                {
+                    <a href="@Url.Action("Index", "Nhanviens")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhân viên</a>
+                    <a href="@Url.Action("Index", "Accounts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tài khoản</a>
+                }
+                <a href="@Url.Action("Index", "Httts")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Hình thức thanh toán</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-motorcycle"></i> Thông tin xe</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Loaixes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Thể loại xe</a>
+                <a href="@Url.Action("Index", "Xes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Tên xe</a>
+                <a href="@Url.Action("Index", "Mauxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Màu xe</a>
+
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="font-size:18px"><i class="fas fa-tasks"></i> Quản lý</a>
+            <div class="dropdown-menu rounded-0 rounded-bottom m-0">
+                <a href="@Url.Action("Index", "Phieunhapkhoes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuxuats")" class="dropdown-item active" style="font-size:18px"><i class="fas fa-pen-nib"></i> Bán xe</a>
+                <a href="@Url.Action("Index", "Phieuchitiennhapxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu chi tiền nhập xe</a>
+                <a href="@Url.Action("Index", "Phieuthutienbanxes")" class="dropdown-item" style="font-size:18px"><i class="fas fa-pen-nib"></i> Phiếu thu tiền bán xe</a>
+            </div>
+        </div>
+        <a href="@Url.Action("Tonkho", "Chitietxes")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-chart-line"></i> Báo cáo</a>
+        @if (acc == null)
+        {
+            <a href="@Url.Action("Login", "Accounts")" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> Đăng nhập</a>
+        }
+        else
+        {
+            @if (User.IsInRole("Admin"))
+            {
+                <a href="@Url.Action("Edit", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+            else
+            {
+                <a href="@Url.Action("EditUser", "Accounts", new { id = @acc.Idacc })" class="nav-item nav-link" style="font-size:18px"><i class="fas fa-user"></i> @acc.Username</a>
+            }
+
+            <a href="@Url.Action("Logout", "Accounts")" class="nav-item nav-link" style="font-size:18px; color:red"><i class="fas fa-undo"></i> Đăng xuất</a>
+        }
+    </div>
+}
+@section Section2{
+    <div class="container-lg" style="margin-top:30px">
+        <div class="content-page">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px">
+                                <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                    Chi tiết phiếu bán xe
+                                </h5>
+                            </div>
+                            <form id="ApplicantForm" asp-action="Details">
+                                <div class="row mx-1 py-2" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                    <input type="hidden" asp-for="Idpxk" />
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label class="pt-1">Mã phiếu nhập:</label></b>
+                                            <input asp-for="Sopxk" readonly class="form-control" style="color:#0099ff; background:#fff" />
+                                            <span asp-validation-for="Sopxk" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Ngày xuất:</label></b>
+                                            <input asp-for="Ngayxuat" class="form-control floating" readonly style="background:#fff" />
+                                            
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group">
+                                            <b><label>Số hóa đơn:</label></b>
+                                            <input asp-for="Sohd" readonly class="form-control" style="background:#fff" />
+                                            <span asp-validation-for="Sohd" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group mt-2">
+                                            <b><label>Ngày hóa đơn:</label></b>
+                                            <input asp-for="Ngayhd" class="form-control floating" readonly style="background:#fff" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group mt-2">
+                                            <b><label>Khách hàng mua:</label></b>
+                                            <select asp-for="Idkh" id="sample-select" size="5" disabled style="background:#fff">
+                                                @if (TempData["Khachhang"] is List<Khachhang> khachHang)
+                                                {
+                                                    foreach (var product in khachHang)
+                                                    {
+                                                        <option value="@product.Idkh">
+                                                            @product.Tenkh - @product.Diachikh - @product.Dienthoaikh
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-5 col-md-4">
+                                        <div class="form-group mt-2">
+                                            <b><label>Nhân viên nhập:</label></b>
+                                            <select asp-for="Idnv" id="sample-select" size="5" disabled style="background:#fff">
+                                                @if (TempData["Nhanvien"] is List<Nhanvien> nhanVien)
+                                                {
+                                                    foreach (var employee in nhanVien)
+                                                    {
+                                                        <option value="@employee.Idnv">
+                                                            @employee.Tennv
+                                                        </option>
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-12" style="margin-bottom:15px; margin-top:15px">
+                                    <h5 class="text-uppercase mb-0 mt-0 page-title">
+                                        Xe đã chọn
+                                    </h5>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="table-responsive" style="border: 4px solid #DBC4F0; border-radius:10px;">
+                                            <table id="ExpTable" class="table custom-table">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th style="width:150px;">Mã phiếu nhập</th>
+                                                        <th>Tên xe</th>
+                                                        <th style="width:180px">Màu xe</th>
+                                                        <th style="width:80px;">Đời xe</th>
+                                                        <th style="width:135px;">Số khung</th>
+                                                        <th style="width:135px;">Số máy</th>
+                                                        <th style="width:160px;">BS lúc bán</th>
+                                                        <th style="width:100px">Bảo hành</th>
+                                                        <th style="width:120px">Giá</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    @for (int i = 0; i < Model.Chitietxes.Count; i++)
+                                                    {
+                                                        <tr>
+                                                            <td>
+                                                                <select disabled asp-for="@Model.Chitietxes[i].Idpnk" class="form-control" style="background:#fff">
+                                                                    @if (TempData["Pnk"] is List<Phieunhapkho> pnk)
+                                                                    {
+                                                                        foreach (var nk in pnk)
+                                                                        {
+                                                                            <option value="@nk.Idpnk">
+                                                                                @nk.Mapnk
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <select id="tenxe" disabled asp-for="@Model.Chitietxes[i].Idxe" class="form-control" style="background:#fff">
+                                                                    @* <option disabled selected value="">--Chọn Xe--</option> *@
+                                                                    @if (TempData["Tenxe"] is List<Xe> xe)
+                                                                    {
+                                                                        foreach (var tenxe in xe)
+                                                                        {
+                                                                            <option value="@tenxe.Idxe">
+                                                                                @tenxe.Maxe @tenxe.Tenxe
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+
+                                                            <td>
+                                                                <select id="mauxe" disabled asp-for="@Model.Chitietxes[i].Idmx" class="form-control" style="background:#fff">
+                                                                    @if (TempData["Tenmx"] is List<Mauxe> mx)
+                                                                    {
+                                                                        foreach (var mauxe in mx)
+                                                                        {
+                                                                            <option value="@mauxe.Idmx">
+                                                                                @mauxe.Tenmx
+                                                                            </option>
+                                                                        }
+                                                                    }
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Doixe" class="form-control" readonly style="background:#fff" />
+                                                            </td>
+                                                            
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Sokhung" class="form-control" readonly style="background:#fff" />
+                                                                <span asp-validation-for="@Model.Chitietxes[i].Sokhung" class="text-danger"></span>
+                                                            </td>
+                                                            <td>
+                                                                <input asp-for="@Model.Chitietxes[i].Somay" class="form-control" readonly style="background:#fff" />
+                                                            </td>
+                                                            @if (@Model.Chitietxes[i].Biensolucban != null)
+                                                            {
+                                                                <td>
+                                                                    <input asp-for="@Model.Chitietxes[i].Biensolucban" class="form-control" readonly style="background:#fff" />
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td>
+                                                                    <input value="Không có" class="form-control" readonly style="background:#fff" />
+                                                                </td>
+                                                            }
+                                                            <td>
+                                                                <select disabled class="select form-control" asp-for="@Model.Chitietxes[i].Thoigianbaohanh" style="background:#fff">
+                                                                    <option value="0">Không bảo hành</option>
+                                                                    <option value="30">1 tháng</option>
+                                                                    <option value="90">3 tháng</option>
+                                                                    <option value="180">6 tháng</option>
+                                                                    <option value="360">1 năm</option>
+                                                                    <option value="720">2 năm</option>
+                                                                    <option value="980">3 năm</option>
+                                                                </select>
+                                                            </td>
+                                                            <td>
+                                                                <input oninput="formatCurrencyAndTotal(this);" id="Gianhap-@i" asp-for="@Model.Chitietxes[i].Giaban" class="form-control" asp-format="{0:N0}" readonly style="background:#fff" />
+                                                            </td>
+
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table custom-table">
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td class="col-8 py-3"
+                                                            style="text-align: right; font-weight: bold; padding-top:5px">
+                                                            <i class="fas fa-dollar-sign" style="color:#00cc7a"></i> Tổng tiền
+                                                        </td>
+                                                        <td class="col-4">
+                                                            <input class="form-control-plaintext" id="itongtienhang"
+                                                                   asp-for="Tongtienxuat" asp-format="{0:N0}" readonly type="text">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="hdnLastIndex" value="0" />
+
+                                <div class="col-12 btn-group">
+                                    <div class="col-6 form-group text-right p-2">
+                                        <a asp-action="Index" class="btn btn-secondary" style="float: right;">&nbsp;Quay về&nbsp;</a>
+                                    </div>
+                                    <div class="col-6 form-group text-left p-2">
+                                        <a asp-action="DownPDF" asp-route-id="@Model?.Idpxk" class="btn btn-danger"><i class="fas fa-file-pdf"></i> In PDF</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function formatCurrency(input) {
+            
+            var value = input.value.replace(/\D/g, '');
+            var formatter = new Intl.NumberFormat('vi-VN');
+            var formattedValue = formatter.format(value);
+
+            // Thay thế dấu "." bằng dấu ","
+            formattedValue = formattedValue.replace(/\./g, ',');
+
+            input.value = formattedValue;
+
+            // Cập nhật tổng tiền hàng
+            Tongtienhang();
+        }
+
+        
+        function formatCurrencyAndTotal(input) {
+            formatCurrency(input);
+
+            var total = 0;
+            var ithanhtienElements = document.querySelectorAll('[id^="Gianhap-"]');
+
+            ithanhtienElements.forEach(function (element) {
+                var ithanhtien = parseFloat(element.value.replace(/\D/g, '')) || 0;
+                total += ithanhtien;
+            });
+
+            var itongtienhang = document.getElementById("itongtienhang");
+            if (itongtienhang) {
+                var formatter = new Intl.NumberFormat('vi-VN');
+                var formattedTotal = formatter.format(total);
+                formattedTotal = formattedTotal.replace(/\./g, ',');
+
+                itongtienhang.value = formattedTotal;
+            }
+        }
+
+        function submitForm() {
+            document.getElementById("ApplicantForm").submit();
+        }
+    </script>
+    <script>
+        function Tongtienhang() {
+            var total = 0;
+
+            var ithanhtienElements = document.querySelectorAll('[id^="Gianhap-"]');
+
+            ithanhtienElements.forEach(function (element) {
+                var ithanhtien = parseFloat(element.value.replace(/\D/g, '')) || 0;
+                total += ithanhtien;
+            });
+
+            var itongtienhang = document.getElementById("itongtienhang");
+            if (itongtienhang) {
+                var formatter = new Intl.NumberFormat('vi-VN');
+                var formattedTotal = formatter.format(total);
+                formattedTotal = formattedTotal.replace(/\./g, ',');
+
+                itongtienhang.value = formattedTotal;
+            }
+        }
+        window.onload = Tongtienhang;
+    </script>
+}
+
